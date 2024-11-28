@@ -226,9 +226,13 @@ footer {
   }
 
   .flex.items-center.flex-col.justify-center.w-full.h-screen.bg-cover.bg-center {
-    background-size: 410px 844px !important;
-    padding-left: 15px;
+    background-size: 440px 935px !important;
+    padding: 15px;
   }
+
+  .grid.grid-cols-1.py-\[100px\].sm\:grid-cols-2.lg\:grid-cols-3.gap-6 {
+    padding: 0 !important;
+}
 
   p.mb-4.text-\[40px\].leading-\[60px\].tracking-\[-2\%\].sm\:text-left {
     font-size: 16px;
@@ -258,8 +262,12 @@ footer {
   }
 
   h2.text-\[96px\].leading-\[144px\].font-\[400\].text-black.text-center.mb-8 {
-    font-size: 48px;
+    font-size: 42px;
     line-height: 40px;
+  }
+
+  footer.bg-\[\#1b1c2e\].text-white.py-10 {
+    padding-left: 0;
   }
 
   .sm\:grid-cols-2 {

@@ -1,40 +1,25 @@
 // src/Footer.jsx  
 import React from 'react';
-import { FaFacebookF, FaTelegramPlane, FaInstagram, FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import { MdEmail, MdPhone } from 'react-icons/md';
 
 const Footer = () => {
       return (
             <footer className="bg-[#1b1c2e] text-white py-10">
-                  <div className="container mx-auto text-center">
-                        <div className="flex justify-center space-x-4 mb-2">
-                              <a href="#" className="bg-[#CB935D] p-2 rounded-full  ">
-                                    <FaFacebookF size={24} className='text-[#000000] '  />
-                              </a>
-                              <a href="#" className="bg-[#CB935D] p-2 rounded-full">
-                                    <FaTelegramPlane size={24} className='text-[#000000] '   />
-                              </a>
-                              <a href="#" className="bg-[#CB935D] p-2 rounded-full">
-                                    <FaInstagram size={24} className='text-[#000000] '   />
-                              </a>
-                              <a href="#" className="bg-[#CB935D] p-2 rounded-full">
-                                    <FaGithub size={24} className='text-[#000000] '   />
-                              </a>
-                              <a href="#" className="bg-[#CB935D] p-2 rounded-full">
-                                    <FaLinkedinIn  size={24} className='text-[#000000] '   />
-                              </a>
+                  <div className="container flex flex-col justify-center items-center text-center">
+                        <div className="mb-4 p-4">
+                              <div className="flex items-center mb-2">
+                                    <MdEmail className="text-blue-500 text-2xl mr-2" />
+                                    <span className="text-white font-[400] text-[16px] leading-[32px]">info@sandhee.com</span>
+                              </div>
+                              <div className="flex items-center">
+                                    <MdPhone className="text-green-500 text-2xl mr-2" />
+                                    <span className="text-white font-[400] text-[16px] leading-[32px">+91 92664 34364</span>
+                              </div>
                         </div>
-                        <div className="mb-[40px] mt-[40px] flex justify-center gap-10">
-                              <a href="#" className="text-[16px] font-[Roboto] text-[#CB935D]">Programmes</a>
-                              <a href="#" className="text-[16px] font-[Roboto] text-[#CB935D]">Faculty</a>
-                              <a href="#" className="text-[16px] font-[Roboto] text-[#CB935D]">Infrastructure</a>
-                              <a href="#" className="text-[16px] font-[Roboto] text-[#CB935D]">Events</a>
-                              <a href="#" className="text-[16px] font-[Roboto] text-[#CB935D]">Placements</a>
-                        </div>
-                        <div className="mb-4">
-                              <a href="#" className=" w-[150px] h-[50px] bg-[#CB935D] text-[#000000] text-[16px] px-[26px] py-3 rounded-full">Contact Us</a>
-                        </div>
-                        <p className=" text-[#FFFFFF] text-[12px] font-light ">© 2022 All Rights Reserved</p>
+                        <p className=" text-[#FFFFFF] text-[12px] font-light ">© 2024 All Rights Reserved</p>
+                        <div className='bg-white w-full'>
                         <hr className='text-[#FFFFFF]  ' />
+                        </div>
                   </div>
             </footer>
       );
