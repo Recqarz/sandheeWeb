@@ -206,6 +206,57 @@ footer {
   transform: rotate(180deg);
 }
 
+
+.about__conttts h2 {
+  font-size: 60px;
+  line-height: 90px;
+  color: #FFFFFF;
+  font-weight: 400;
+  font-family: "Poppins", serif;
+}
+
+.about__conttts P {
+  font-size: 20px;
+  line-height: 27px;
+  color: #829BBC;
+  font-weight: 400;
+  font-family: "Archivo", sans-serif;
+}
+
+.icons__aboutt {
+  position: relative;
+}
+
+.icons__aboutt::after {
+  content: "";
+  position: absolute;
+  bottom: 20rem;
+  right: -12rem;
+  width: 193px;
+  height: inherit;
+  background-image: url(/public/about/about-icon.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* transform: rotate(180deg); */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media only screen and (min-width: 320px) and (max-width: 768px) {
   h1.text-\[50px\].text-left.leading-\[75px\].font-\[500\].mb-4.text-\[\#FFFFFF\] {
     font-size: 18px;

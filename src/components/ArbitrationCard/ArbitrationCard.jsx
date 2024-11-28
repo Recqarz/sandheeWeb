@@ -8,7 +8,7 @@ const ArbitrationCard = () => {
                         <div className='bg-[#F9F7F5] w-[1377px] h-[858px] opacity-80'>
                               <div className="flex justify-center items-center  py-10">
                                     <button className="w-[600px] h-[155px] rounded-[45px] text-center text-[64px] font-medium bg-[#CB935D] text-[#191A23] border-b-2 border-black shadow-lg opacity-[initial]">
-                                          CONCILIATION
+                                    ARBITRATION 
                                     </button>
 
 
@@ -24,7 +24,7 @@ const ArbitrationCard = () => {
                         <div className='bg-[#F9F7F5] w-[1377px] h-[858px] opacity-80'>
                               <div className="flex justify-center items-center  py-10">
                                     <button className="w-[600px] h-[155px] rounded-[45px] text-center text-[64px] font-medium bg-[#CB935D] text-[#191A23] border-b-2 border-black shadow-lg opacity-[initial] ">
-                                          CONCILIATION
+                                    MEDIATION
                                     </button>
 
                               </div>
@@ -44,7 +44,7 @@ const ArbitrationCard = () => {
                         <div className='bg-[#F9F7F5] w-[1377px] h-[858px] opacity-80'>
                               <div className="flex justify-center items-center  py-10">
                                     <button className="w-[600px] h-[155px] rounded-[45px] text-center text-[64px] font-medium bg-[#CB935D] text-[#191A23] border-b-2 border-black shadow-lg opacity-[initial]">
-                                          CONCILIATION
+                                    CONCILIATION 
                                     </button>
 
                               </div>
