@@ -224,11 +224,23 @@ footer {
     line-height: 20px;
   }
 
+  p.mb-4.text-\[30px\].font-\[400\].leading-\[60px\].tracking-\[-2\%\].sm\:text-left {
+    text-align: left;
+  }
+
+  p.mb-4.text-\[30px\].font-\[400\].leading-\[60px\].tracking-\[-2\%\].sm\:text-left {
+    text-align: left;
+  }
+
+  p.text-\[30px\].font-\[400\].leading-\[60px\].tracking-\[-2\%\].sm\:text-left {
+    text-align: left;
+  }
+
   a.bg-\[\#CB935D\].w-\[231px\].h-\[60px\].text-white.font-\[400\].text-\[24px\].leading-\[36px\].flex.items-center.justify-center.rounded-none {
     width: 133px;
     height: 40px;
     font-size: 16px;
-}
+  }
 
   .container.relative.text-left.mt-\[200px\].mb-\[580px\].z-10 {
     margin-top: 135px;
