@@ -4,7 +4,8 @@ import Header from '../Header/Header';
 const HeroSection = () => {
       return (
             <div
-                  className="flex items-center flex-col justify-center w-full h-screen bg-cover bg-center"
+                  className="flex items-center flex-col justify-center w-full 
+                   bg-cover bg-center"
                   style={{
                         backgroundImage: "url('/bg-1.png')",
                         backgroundSize: 'cover',
@@ -17,7 +18,7 @@ const HeroSection = () => {
                   {/* Header on top of the background */}
                   <Header />
 
-                  <div className=" container relative text-left top-[80px] z-10">
+                  <div className=" container relative text-left  mt-[280px] mb-[596px] z-10">
                         <h1 className="text-[50px] text-left    leading-[75px]   font-[500] mb-4 text-[#FFFFFF]">
                               A state of an art ODR <br />
                               (Online Dispute Resolution) platform <br />
@@ -28,9 +29,15 @@ const HeroSection = () => {
                               while also avoiding harmful adversarial processes that can damage <br />
                               customer relationships.
                         </p>
-                        <button className="bg-[#CB935D] w-[231px] h-[60px] text-white font-[400] text-[24px] leading-[36px]">
+                        <a
+                              href="https://www.odr.sandhee.com/"
+                              className="bg-[#CB935D] w-[231px] h-[60px] text-white font-[400] text-[24px] leading-[36px] flex items-center justify-center rounded-none"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                        >
                               Enroll Now
-                        </button>
+                        </a>
+
                   </div>
             </div>
       );

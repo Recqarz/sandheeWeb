@@ -208,13 +208,32 @@ footer {
 
 @media only screen and (min-width: 320px) and (max-width: 768px) {
   h1.text-\[50px\].text-left.leading-\[75px\].font-\[500\].mb-4.text-\[\#FFFFFF\] {
-    font-size: 24px;
-    line-height: 36px;
+    font-size: 18px;
+    line-height: 26px;
+    ;
+  }
+
+  .container.relative.text-left.mt-\[280px\].mb-\[596px\].z-10 {
+    margin-top: 166px;
+    margin-bottom: 20px;
+    padding: 10px;
   }
 
   p.mb-6.text-left.text-\[23px\].leading-\[34\.5px\].text-\[\#FFFFFF\] {
     font-size: 12px;
     line-height: 20px;
+  }
+
+  a.bg-\[\#CB935D\].w-\[231px\].h-\[60px\].text-white.font-\[400\].text-\[24px\].leading-\[36px\].flex.items-center.justify-center.rounded-none {
+    width: 133px;
+    height: 40px;
+    font-size: 16px;
+}
+
+  .container.relative.text-left.mt-\[200px\].mb-\[580px\].z-10 {
+    margin-top: 135px;
+    padding: 20px;
+    margin-bottom: 0px;
   }
 
   h1.text-\[96px\].leading-\[144px\].font-\[700\].text-\[\#FFFFFF\] {
@@ -226,13 +245,20 @@ footer {
   }
 
   .flex.items-center.flex-col.justify-center.w-full.h-screen.bg-cover.bg-center {
-    background-size: 440px 935px !important;
+    /* background-size: 440px 935px !important; */
     padding: 15px;
+    height: auto;
+  }
+
+  button.bg-\[\#CB935D\].w-\[231px\].h-\[60px\].text-white.font-\[400\].text-\[24px\].leading-\[36px\] {
+    width: 130px;
+    height: 40px;
+    font-size: 16px;
   }
 
   .grid.grid-cols-1.py-\[100px\].sm\:grid-cols-2.lg\:grid-cols-3.gap-6 {
     padding: 0 !important;
-}
+  }
 
   p.mb-4.text-\[40px\].leading-\[60px\].tracking-\[-2\%\].sm\:text-left {
     font-size: 16px;
@@ -295,6 +321,11 @@ footer {
     height: -webkit-fill-available;
     padding: 20px;
     background-size: cover;
+  }
+
+
+  br {
+    display: none;
   }
 
   .bgg__CONCILIATION.w-\[1614px\].h-\[977px\].flex.justify-center.items-center {

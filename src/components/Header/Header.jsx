@@ -49,7 +49,7 @@ const Header = () => {
                     `font-[400] text-[18px] md:text-[24px] leading-[28px] md:leading-[36px] tracking-[1px] ${
                       isActive
                         ? "text-[#FFFFFF] underline underline-offset-4 decoration-2"
-                        : "text-gray-300 no-underline"
+                        : "text-gray-500 no-underline"
                     } hover:text-[#FFFFFF] transition duration-300`
                   }
                   onClick={() => setIsMobileMenuOpen(false)} // Close menu on click

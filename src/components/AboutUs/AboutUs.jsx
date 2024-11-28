@@ -10,14 +10,14 @@ const AboutUs = () => {
                             ABOUT <span className="text-[#CB935D] text-[96px] leading-[144px]  font-[700]">US</span>
                         </h1>
                     </div>
-                    <div className="mt-4 ">
-                        <p className="mb-4 text-[40px] leading-[60px] tracking-[-2%] sm:text-left">
+                    <div className="mt-4 z-10">
+                        <p className="mb-4 text-[30px] font-[400] leading-[60px] tracking-[-2%] sm:text-left">
                             Sandhee derives its meaning from the Hindi word संधि.
                         </p>
-                        <p className="mb-4 text-[40px] leading-[60px] tracking-[-2%] sm:text-left">
+                        <p className="mb-4 text-[30px] font-[400] leading-[60px] tracking-[-2%] sm:text-left">
                             It signifies an Accord between countries or groups of people. Sandhee is basically a formal agreement between two or more people, organizations, or governments.
                         </p>
-                        <p className="text-[40px] leading-[60px] tracking-[-2%] sm:text-left">
+                        <p className="text-[30px] font-[400] leading-[60px] tracking-[-2%] sm:text-left">
                             Sandhee aims to revolutionize dispute resolution by providing a timely, affordable, and fair platform; they encourage businesses to settle disagreements efficiently.
                             Sandhee aspires to be India's leading dispute resolution center, recognized globally for its reliability, transparency, advanced technology, streamlined processes, excellent infrastructure, and top-notch administrative support.
                         </p>
