@@ -17,33 +17,29 @@ const InquiryForm = () => {
 
       const handleSubmit = (e) => {
             e.preventDefault();
-
+        
             emailjs.send(
-                  "service_odwoct9",
-                  "template_55ne779",
-                  {
-                        to_email:formData.email,
-                        full_name: formData.fullName,
-                  
-                        business: formData.business,
-                        message: formData.message
-                  },
-                  "mmC3NzjzRjO8OajBQ"
-            ).then((response) => {
-                  alert('Email sent successfully !')
-                  setFormData({ fullName: "", email: "", business: "", message: "" })
-            },
-
-                  (error) => {
-                        console.log("Failed...", error);
-                        alert("Failed  to send mail. please try again. ")
-
-                  }
-
+                process.env.REACT_APP_EMAILJS_SERVICE_ID,
+                process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+                {
+                    to_email: formData.email,
+                    full_name: formData.fullName,
+                    business: formData.business,
+                    message: formData.message
+                },
+                process.env.REACT_APP_EMAILJS_USER_ID
+            ).then(
+                (response) => {
+                    alert('Email sent successfully!');
+                    setFormData({ fullName: "", email: "", business: "", message: "" });
+                },
+                (error) => {
+                    console.log("Failed...", error);
+                    alert("Failed to send mail. Please try again.");
+                }
             );
-
-      };
-
+        };
+        
 
 
 
