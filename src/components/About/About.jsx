@@ -8,9 +8,9 @@ const About = () => {
                   <div className=" lg:w-[696px] lg:h-[728px] md:w-1/2 icons__aboutt">
                         <img src={aboutImage} alt="Meeting" className="w-full h-full object-contain shadow-lg" />
                   </div>
-                  <div className="md:w-1/2   about__conttts">
-                        <h2 className="mb-20">ABOUT US</h2>
-                        <div className="mb-20">
+                  <div className="md:w-1/2 2xl:mt-12   about__conttts">
+                        <h2 className="mb-10">ABOUT US</h2>
+                        <div className="2xl:mb-20 mb-10 ">
                               <p> Sandhée derives its meaning from the Hindi word <strong>संधि</strong>.</p>
                               <p> It signifies an accord between countries or groups of people.</p>
                               <p> Sandhée is basically a formal agreement between two or more people, organizations, or governments.</p>

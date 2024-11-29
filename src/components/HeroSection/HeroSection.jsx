@@ -18,7 +18,7 @@ const HeroSection = () => {
                   {/* Header on top of the background */}
                   <Header />
 
-                  <div className=" container relative text-left  mt-[280px] mb-[596px] z-10">
+                  <div className=" container relative text-left lg:left-[-5.7rem]  mt-[280px] mb-[596px] z-10">
                         <h1 className="text-[50px] text-left    leading-[75px]   font-[500] mb-4 text-[#FFFFFF]">
                               A state of an art ODR <br />
                               (Online Dispute Resolution) platform <br />

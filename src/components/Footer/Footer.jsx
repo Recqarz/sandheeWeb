@@ -6,7 +6,10 @@ const Footer = () => {
       return (
             <footer className="bg-[#1b1c2e] flex justify-center text-white py-10">
                   <div className="container flex flex-col justify-center items-center text-center">
-                        <div className="mb-4 p-4">
+                        <div className='footer-header'>
+                              <h1>SANDHEE ADR</h1>
+                        </div>
+                        <div className="mb-4 p-4 w-full flex justify-between items-center">
                               <div className="flex items-center mb-2">
                                     <MdEmail className="text-blue-500 text-2xl mr-2" />
                                     <span className="text-white font-[400] text-[16px] leading-[32px]">info@sandhee.com</span>
@@ -18,7 +21,7 @@ const Footer = () => {
                         </div>
                         <p className=" text-[#FFFFFF] text-[12px] font-light ">© 2024 All Rights Reserved</p>
                         <div className='bg-white w-full'>
-                        <hr className='text-[#FFFFFF]  ' />
+                              <hr className='text-[#FFFFFF]  ' />
                         </div>
                   </div>
             </footer>
