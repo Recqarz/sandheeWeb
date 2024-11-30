@@ -17,29 +17,29 @@ const InquiryForm = () => {
 
       const handleSubmit = (e) => {
             e.preventDefault();
-        
+
             emailjs.send(
-                process.env.REACT_APP_EMAILJS_SERVICE_ID,
-                process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-                {
-                    to_email: formData.email,
-                    full_name: formData.fullName,
-                    business: formData.business,
-                    message: formData.message
-                },
-                process.env.REACT_APP_EMAILJS_USER_ID
+                  process.env.REACT_APP_EMAILJS_SERVICE_ID,
+                  process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+                  {
+                        to_email: formData.email,
+                        full_name: formData.fullName,
+                        business: formData.business,
+                        message: formData.message
+                  },
+                  process.env.REACT_APP_EMAILJS_USER_ID
             ).then(
-                (response) => {
-                    alert('Email sent successfully!');
-                    setFormData({ fullName: "", email: "", business: "", message: "" });
-                },
-                (error) => {
-                    console.log("Failed...", error);
-                    alert("Failed to send mail. Please try again.");
-                }
+                  (response) => {
+                        alert('Email sent successfully!');
+                        setFormData({ fullName: "", email: "", business: "", message: "" });
+                  },
+                  (error) => {
+                        console.log("Failed...", error);
+                        alert("Failed to send mail. Please try again.");
+                  }
             );
-        };
-        
+      };
+
 
 
 
@@ -66,7 +66,7 @@ const InquiryForm = () => {
                                                 required
                                           />
                                     </div>
-            
+
                                     <div className="w-full mt-4 md:mt-0">
                                           <input
                                                 type="email"

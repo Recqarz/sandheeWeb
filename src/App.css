@@ -239,14 +239,17 @@ footer {
   background-repeat: no-repeat;
   /* transform: rotate(180deg); */
 }
+
 @media only screen and (min-width: 320px) and (max-width: 768px) {
   .lg\:w-\[696px\].lg\:h-\[728px\].md\:w-1\/2.icons__aboutt {
     width: 300px;
     height: -webkit-fill-available;
   }
+
   .icons__aboutt::after {
     display: none;
   }
+
   .about__conttts h2 {
     font-size: 48px;
     line-height: 100px;
@@ -291,6 +294,7 @@ h2.expertise::before {
   background-position: center;
   background-repeat: no-repeat;
 }
+
 h2.expertise::after {
   content: "";
   position: absolute;
@@ -398,7 +402,8 @@ p.text-\[29px\].text-\[\#FFFFFF\].leading-\[43\.5px\].font-\[300\] {
   height: 139px;
   background-image: url(/public/expertise/stats.png);
   background-repeat: no-repeat;
-  background-size: contain; /* Ensure the image is scaled correctly */
+  background-size: contain;
+  /* Ensure the image is scaled correctly */
 }
 
 @media only screen and (min-width: 320px) and (max-width: 768px) {
@@ -407,7 +412,8 @@ p.text-\[29px\].text-\[\#FFFFFF\].leading-\[43\.5px\].font-\[300\] {
   }
 
   .stats--bg {
-    text-align: center; /* Ensure proper alignment on small screens */
+    text-align: center;
+    /* Ensure proper alignment on small screens */
   }
 
   .flex.flex-wrap.justify-center.lg\:justify-evenly.gap-x-\[5\.1rem\].items-center {
@@ -448,6 +454,7 @@ h2.inquiry--text::before {
   background-position: center;
   background-repeat: no-repeat;
 }
+
 h2.inquiry--text::after {
   content: "";
   position: absolute;
@@ -500,10 +507,12 @@ option {
     margin: 0;
     overflow: hidden;
   }
+
   /* Adjust container margins */
   .inquiry-bg {
     overflow: hidden;
-    padding-top: 5rem; /* Slightly reduced padding for mobile */
+    padding-top: 5rem;
+    /* Slightly reduced padding for mobile */
     padding-bottom: 5rem;
   }
 
@@ -526,17 +535,21 @@ option {
   h2.inquiry--text::after {
     display: none;
   }
+
   p.vision-textt.vmb__text {
     font-size: 12px;
   }
+
   .mb-\[222px\].mt-\[127px\] {
     margin-top: 14px;
     margin-bottom: 14px;
   }
+
   form.lg\:w-\[1212px\].mx-auto {
     width: 340px;
     padding: 20px;
   }
+
   .w-full.lg\:h-\[183px\].flex.flex-wrap.lg\:flex-nowrap.justify-evenly.items-center.bg-\[\#1B314E\].px-4.py-6.lg\:py-0 {
     margin-top: 60px;
   }
@@ -546,7 +559,8 @@ option {
   }
 
   .md\:flex-row {
-    flex-direction: column !important; /* Force vertical stacking on small screens */
+    flex-direction: column !important;
+    /* Force vertical stacking on small screens */
   }
 
   /* Input fields and textarea */
@@ -597,10 +611,128 @@ option {
   }
 }
 
+.btnAtmtct {
+  width: 100%;
+  font-family: "Poppins", serif;
+  max-width: 600px;
+  height: 155px;
+  border-radius: 45px;
+  text-align: center;
+  font-size: 64px;
+  line-height: 96px;
+  font-weight: 500;
+  font-weight: 400;
+  background-color: #cb935d;
+  color: #191a23;
+  border: 1px solid #000;
+  outline: none;
+  box-shadow: 0px 5px 0px 0px rgba(25, 26, 35, 1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  margin: auto;
+  /* text-align: center; */
+}
+
+.arbtration-text {
+  font-family: "Poppins", serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+  text-align: justified;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(0, 0, 0, 1);
+}
+
+h3.arbtration-heading {
+  font-family: "Poppins", serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: justified;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(0, 0, 0, 1);
+}
+
+/* w-full max-w-[600px] h-[155px] rounded-[45px] text-center text-[2rem] md:text-[3rem] font-medium bg-[#CB935D] text-[#191A23] border-b-4 border-black shadow-lg */
+
+.arbirato_bg {
+  background-image: url(/public/arb.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-arbittt {
+  position: relative;
+}
+
+.bg-arbittt::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -85px;
+  width: 337px;
+  height: 246px;
+  background-image: url(/public/arbsidebg.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bullet-list {
+  list-style-type: disc;
+  list-style-position: outside;
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+.bullet-list li {
+  margin-bottom: 1rem;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  .arbirato_bg {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .bg-arbittt {
+    padding: 22px;
+  }
+
+  span.arbtration-text.pl-\[31px\] {
+    padding: 0px !important;
+  }
+
+  .btnAtmtct {
+    width: 100%;
+    font-size: 18px;
+    max-width: 220px;
+    height: 40px;
+    line-height: 24px;
+  }
+
+  .arbtration-heading {
+    font-size: 14px;
+  }
+
+  .arbtration-text {
+    font-size: 12px;
+  }
+
+  .bg-arbittt::before {
+    display: none;
+  }
+}
+
 @media only screen and (min-width: 320px) and (max-width: 768px) {
   header.absolute.top-0.left-0.w-full.z-50.py-4 {
     padding-right: 14px;
   }
+
   h1.text-\[50px\].text-left.leading-\[75px\].font-\[500\].mb-4.text-\[\#FFFFFF\] {
     font-size: 18px;
     line-height: 26px;
@@ -777,6 +909,7 @@ option {
   header.absolute.top-0.left-0.w-full.z-50.py-4 {
     overflow: hidden;
   }
+
   nav.fixed.top-0.lg\:left-\[8rem\].w-full.h-full.md\:relative.md\:h-auto.md\:w-auto.bg-black.bg-opacity-90.md\:bg-transparent.flex.flex-col.md\:flex-row.items-center.justify-center.md\:justify-end.transition-transform.duration-300.-translate-x-full.md\:translate-x-0.z-40 {
     left: -12rem;
   }
@@ -838,6 +971,7 @@ option {
   h2.expertise::before {
     left: 24rem;
   }
+
   h2.expertise::after {
     right: 24rem;
   }
@@ -854,6 +988,7 @@ option {
   h2.inquiry--text::before {
     left: 22rem;
   }
+
   h2.inquiry--text::after {
     right: 22rem;
   }
@@ -867,6 +1002,7 @@ option {
   header.absolute.top-0.left-0.w-full.z-50.py-4 {
     overflow: hidden;
   }
+
   nav.fixed.top-0.lg\:left-\[8rem\].w-full.h-full.md\:relative.md\:h-auto.md\:w-auto.bg-black.bg-opacity-90.md\:bg-transparent.flex.flex-col.md\:flex-row.items-center.justify-center.md\:justify-end.transition-transform.duration-300.-translate-x-full.md\:translate-x-0.z-40 {
     left: -2rem;
   }
@@ -928,6 +1064,7 @@ option {
   h2.expertise::before {
     left: 24rem;
   }
+
   h2.expertise::after {
     right: 24rem;
   }
@@ -944,6 +1081,7 @@ option {
   h2.inquiry--text::before {
     left: 22rem;
   }
+
   h2.inquiry--text::after {
     right: 22rem;
   }
@@ -951,4 +1089,68 @@ option {
   p.vision-textt.vmb__text {
     font-size: 14px;
   }
+}
+
+/* user details form css  */
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  .flex.w-screen.h-screen.items-center.justify-center.overflow-hidden.bg-stone-300 {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+  }
+
+  button.sc-fAUdSK.MsGW {
+    width: 150px;
+    height: 60px;
+  }
+
+  .mrnIu {
+    padding-top: 0.7rem !important ;
+    padding-bottom: 0.7rem !important;
+  }
+
+  .mrnIu::placeholder {
+    font-size: 14px;
+  }
+ 
+  .mb-4.flex.flex-col.sm\:flex-row.sm\:space-x-4 {
+    gap: 10px;
+  }
+
+  label.sc-blHHSb.vEnXB {
+    font-size: 14px;
+  }
+
+  /* complaint button css */
+
+  .flex.justify-between.mt-6 {
+    margin: 0;
+    gap: 60px;
+  }
+
+  button.sc-ghWlax.fbQeBF {
+    height: 60px;
+  }
+
+  button.sc-ghWlax.cMggSy {
+    height: 60px;
+  }
+
+  .flex.items-center.justify-center.w-screen.h-screen.overflow-hidden.bg-stone-300.defaulter {
+    height: 100vh;
+    
+}
+
+form.flex.flex-col.justify-between.items-baseline.w-full.h-full.pb-20 {
+  /* padding: 0; */
+  gap: 0;
+  justify-content: space-evenly;
+}
+
+/* .flex.items-center.justify-center.w-screen.h-screen.overflow-hidden.bg-stone-300.complaint {
+  height: 100vh;
+  overflow: auto;
+} */
+
 }
