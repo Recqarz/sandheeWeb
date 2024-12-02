@@ -1,50 +1,107 @@
-import React from 'react'
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const DefaulterDetails = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({ ...prevState, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { name, email, phone } = formData;
+
+    // Validation
+    if (!name.trim()) {
+      alert("Name is required.");
+      return;
+    }
+
+    if (!email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    if (!phone.trim() || !/^\d{10}$/.test(phone)) {
+      alert("Please enter a valid 10-digit phone number.");
+      return;
+    }
+
+    // Success: Log form data
+    console.log("Defaulter Details Submitted:");
+    console.log({ name, email, phone });
+
+    // Reset form after submission
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+    });
+    alert("Form submitted successfully!");
+  };
+
   return (
     <div className="flex items-center justify-center w-screen h-screen overflow-hidden bg-stone-300 defaulter ">
-      <div className="bg-[#0E1926] max-w-[640px] w-full h-full 2xl:max-w-[640px] 2xl:h-[1080px] overflow-hidden px-4 py-4 2xl:py-20 sm:px-6 md:px-10 ">
+      <div className="bg-[#0E1926] max-w-[640px] w-full h-full 2xl:max-w-[640px] 2xl:h-[1080px] overflow-hidden px-4 py-4 2xl:py-20 sm:px-6 md:px-10">
         <div className="flex items-start mb-6 pt-2">
-          <h2 className="text-[20px] leading-[24.2px] font-[600] font-[Inter] ">Step 3 :</h2>
-          <h3 className="text-[20px] leading-[24.2px] font-[600] font-[Inter]  ml-[80px] 2xl:ml-[130px]">Defaulter Details</h3>
+          <h2 className="text-[20px] leading-[24.2px] font-[600] font-[Inter]">Step 3 :</h2>
+          <h3 className="text-[20px] leading-[24.2px] font-[600] font-[Inter] ml-[80px] 2xl:ml-[130px]">
+            Defaulter Details
+          </h3>
         </div>
 
-        <form className='flex flex-col justify-between items-baseline w-full h-full pb-20 '>
+        <form
+          className="flex flex-col justify-between items-baseline w-full h-full pb-20"
+          onSubmit={handleSubmit}
+        >
           <div>
+            {/* Name Input */}
             <div className="mb-4">
               <Label htmlFor="name">Name*</Label>
               <Input
                 type="text"
-                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
                 className="w-full p-2 rounded-[17px] py-[1rem] px-6 bg-[#fff] text-black placeholder-gray-400 focus:outline-none"
                 placeholder="Enter your name"
                 required
               />
             </div>
 
+            {/* Email Input */}
             <div className="mb-4">
               <Label htmlFor="email">Email Address*</Label>
               <Input
                 type="email"
-                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
                 className="w-full p-2 rounded-[17px] py-[1rem] px-6 bg-[#fff] text-black placeholder-gray-400 focus:outline-none"
                 placeholder="Enter your email"
                 required
               />
             </div>
 
+            {/* Phone Input */}
             <div className="mb-4">
               <Label htmlFor="phone">Phone Number*</Label>
               <Input
                 type="tel"
-                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
                 className="w-full p-2 rounded-[17px] py-[1rem] px-6 bg-[#fff] text-black placeholder-gray-400 focus:outline-none"
                 placeholder="Enter your phone number"
                 required
               />
             </div>
-
           </div>
 
           {/* Buttons */}
@@ -57,23 +114,10 @@ const DefaulterDetails = () => {
         </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default DefaulterDetails
-
-
-
-
-
-
-
-
-
-
-
-
-
+export default DefaulterDetails;
 
 /* Styled Components */
 const Label = styled.label`
@@ -81,15 +125,14 @@ const Label = styled.label`
   font-family: "Inter", sans-serif;
   font-size: 1rem;
   font-weight: 500;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-bottom: 0.5rem;
 `;
 
 const Input = styled.input`
   display: block;
-  width:541px;
-  ${'' /* width: 100%; */}
-  height:74px;
+  width: 541px;
+  height: 74px;
   padding: 0.75rem;
   border-radius: 0.375rem;
   border: 1px solid #ccc;
@@ -114,24 +157,17 @@ const Input = styled.input`
 `;
 
 const Button = styled.button`
-   width: 181px;
-height: 74px;
-border-radius: 17px ;
-opacity: 0px;
-background-color:#CB935D;
-font-family: "Inter";
-font-size: 20px;
-font-weight: 400;
-line-height: 24.2px;
-text-align: center;
-  outline: none;
-  
-text-underline-position: from-font;
-text-decoration-skip-ink: none;
+  width: 181px;
+  height: 74px;
+  border-radius: 17px;
+  background-color: #cb935d;
+  font-family: "Inter";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24.2px;
+  text-align: center;
   color: ${(props) => (props.variant === "secondary" ? "#333" : "#fff")};
-  background-color: ${(props) =>
-    props.variant === "secondary" ? "#f0f0f0" : "#CB935D"};
- 
+  background-color: ${(props) => (props.variant === "secondary" ? "#f0f0f0" : "#cb935d")};
   cursor: pointer;
 
   &:focus {
@@ -139,7 +175,6 @@ text-decoration-skip-ink: none;
   }
 
   @media only screen and (min-width: 320px) and (max-width: 768px) {
-    height: 60px; 
+    height: 60px;
   }
 `;
-

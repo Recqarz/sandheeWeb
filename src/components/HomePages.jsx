@@ -8,7 +8,7 @@ import About from './About/About'
 import ExpertiseSection from './ExpertiseSection/ExpertiseSection'
 import StatsComponent from './StatsComponent/StatsComponent'
 import InquiryForm from './InquiryForm/InquiryForm'
-const Pages = () => {
+const HomePages = () => {
   return (
     <div className='overflow-hidden'>
       <HeroSection />
@@ -16,10 +16,9 @@ const Pages = () => {
       <ExpertiseSection />
       <StatsComponent />
       <InquiryForm />
-      <hr className='h-[3px]' />
-      <Footer />
+      {/* <hr className='h-[3px]' /> */}
     </div>
   )
 }
 
-export default Pages
+export default HomePages

@@ -9,37 +9,78 @@ const ComplaintForm = () => {
       const [category, setCategory] = useState("");
       const [isFocused, setIsFocused] = useState(false);
 
+      // Handle Focus/Blur
       const handleFocus = () => setIsFocused(true);
       const handleBlur = () => setIsFocused(false);
 
-      const handleCategoryChange = (e) => {
-            setCategory(e.target.value);
-      };
+      // Handle Category Change
+      const handleCategoryChange = (e) => setCategory(e.target.value);
 
+      // Handle File Change
       const handleFileChange = (e) => {
             const selectedFile = e.target.files[0];
-            if (selectedFile && selectedFile.size > 5 * 1024 * 1024) { // 5MB limit
-                  alert("File size should not exceed 5MB");
-            } else {
+            if (selectedFile) {
+                  const fileSizeMB = selectedFile.size / (1024 * 1024);
+                  const allowedTypes = ["image/jpeg", "image/png", "application/pdf"];
+
+                  if (!allowedTypes.includes(selectedFile.type)) {
+                        alert("Invalid file type. Only JPEG, PNG, and PDF files are allowed.");
+                        return;
+                  }
+
+                  if (fileSizeMB > 5) {
+                        alert("File size should not exceed 5MB.");
+                        return;
+                  }
+
                   setFile(selectedFile);
             }
       };
 
+      // Handle Form Submit
       const handleSubmit = (e) => {
             e.preventDefault();
+
+            if (!description.trim()) {
+                  alert("Description is required.");
+                  return;
+            }
+
             if (!category) {
                   alert("Please select a category.");
                   return;
             }
-            console.log({ description, category, file });
+
+            if (!file) {
+                  alert("Please attach a proof file.");
+                  return;
+            }
+
+            // Display form data in console
+            console.log("Complaint Details:");
+            console.log({
+                  description,
+                  category,
+                  fileName: file.name,
+                  fileType: file.type,
+                  fileSize: (file.size / (1024 * 1024)).toFixed(2) + " MB",
+            });
+
+            // Reset form after successful submission
+            setDescription("");
+            setCategory("");
+            setFile(null);
+            alert("Form submitted successfully!");
       };
 
       return (
             <div className="flex items-center justify-center w-screen h-screen overflow-hidden bg-stone-300 complaint">
-                  <div className="bg-[#CB935D] max-w-[640px] w-full h-full 2xl:max-w-[640px] 2xl:h-[1080px] overflow-hidden px-4 py-4 2xl:py-20 sm:px-6 md:px-10 ">
+                  <div className="bg-[#CB935D] max-w-[640px] w-full h-full 2xl:max-w-[640px] 2xl:h-[1080px] overflow-hidden px-4 py-4 2xl:py-20 sm:px-6 md:px-10">
                         <div className="flex items-start mb-6 pt-2">
-                              <h2 className="text-[20px] leading-[24.2px] font-[600] font-[Inter] ">Step 2:</h2>
-                              <h3 className="text-[20px] leading-[24.2px] font-[600] font-[Inter]  ml-[80px] 2xl:ml-[80px]">Complaint Details</h3>
+                              <h2 className="text-[20px] leading-[24.2px] font-[600] font-[Inter]">Step 2:</h2>
+                              <h3 className="text-[20px] leading-[24.2px] font-[600] font-[Inter] ml-[80px] 2xl:ml-[80px]">
+                                    Complaint Details
+                              </h3>
                         </div>
 
                         <form onSubmit={handleSubmit}>
@@ -48,7 +89,7 @@ const ComplaintForm = () => {
                                     <Label htmlFor="description">Description*</Label>
                                     <textarea
                                           id="description"
-                                          className=" w-max-[541px] h-[322px] w-full bg-[#FFFFFF] rounded-[17px] pl-5 py-4 focus:outline-none placeholder:text-[#343434] "
+                                          className=" w-max-[541px] h-[322px] w-full font-normal text-[#000] text-[1rem] bg-[#FFFFFF] rounded-[17px] pl-5 py-4 focus:outline-none placeholder:text-[#343434]"
                                           placeholder="Describe your complaint..."
                                           value={description}
                                           onChange={(e) => setDescription(e.target.value)}
@@ -78,22 +119,18 @@ const ComplaintForm = () => {
                                           {/* Custom Dropdown Icon */}
                                           <div className="absolute inset-y-0 right-5 flex items-center pointer-events-none">
                                                 {isFocused ? (
-                                                      <IoMdArrowDropup className="text-gray-500 text-2xl relative right-[-15rem]  " />
+                                                      <IoMdArrowDropup className="text-gray-500 text-2xl relative right-[-15rem]" />
                                                 ) : (
-                                                      <IoMdArrowDropdown className="text-gray-500 text-2xl relative right-[-15rem] " />
+                                                      <IoMdArrowDropdown className="text-gray-500 text-2xl relative right-[-15rem]" />
                                                 )}
                                           </div>
                                     </div>
                               </FormGroup>
 
-
-
                               {/* File Upload */}
                               <FormGroup>
-                                    <Label htmlFor="file" className="">
-                                          Attach Proof*
-                                    </Label>
-                                    <div className="flex justify-between w-full max-w-[541px] h-[60px] 2xl:h-[74px]  items-center mt-2 p-3 bg-white rounded-[17px]">
+                                    <Label htmlFor="file">Attach Proof*</Label>
+                                    <div className="flex justify-between w-full max-w-[541px] h-[60px] 2xl:h-[74px] items-center mt-2 p-3 bg-white rounded-[17px]">
                                           <span className="text-[8px] 2xl:text-[14px] font-[400] text-[#343434]">
                                                 Only jpeg, png, jpg, pdf files are allowed (up to 5MB).
                                           </span>
@@ -106,11 +143,10 @@ const ComplaintForm = () => {
                                                 name="file"
                                                 className="hidden"
                                                 accept="image/jpeg, image/png, application/pdf"
-                                                onChange={handleFileChange} // Handle file change event
+                                                onChange={handleFileChange}
                                           />
                                     </div>
                               </FormGroup>
-
 
                               {/* Buttons */}
                               <div className="flex justify-between mt-6">
@@ -178,6 +214,10 @@ text-decoration-skip-ink: none;
 
   &:focus {
     outline: none;
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 768px) {
+    height: 60px; 
   }
 `;
 

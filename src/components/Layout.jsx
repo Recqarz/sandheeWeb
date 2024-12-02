@@ -1,16 +1,16 @@
-// import React from 'react'
-// import Header from './Header/Header'
-// import Footer from './Footer/Footer'
-// import { Outlet } from 'react-router-dom'
+import React from 'react'
+import HeaderTwo from './Header/HeaderTwo'
+import { Outlet } from 'react-router-dom'
+import FooterTwo from './Footer/FooterTwo'
 
-// const Layout = () => {
-//       return (
-//             <div className='overflow-hidden'>
-//                   <Header />
-//                   <Outlet />
-//                   <Footer />
-//             </div>
-//       )
-// }
+const Layout = () => {
+      return (
+            <div>
+                  <HeaderTwo />
+                  <Outlet />
+                  <FooterTwo />
+            </div>
+      )
+}
 
-// export default Layout
+export default Layout

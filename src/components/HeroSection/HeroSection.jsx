@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../Header/Header';
+import HeaderTwo from '../Header/HeaderTwo';
 
 const HeroSection = () => {
       return (
@@ -16,7 +17,7 @@ const HeroSection = () => {
                   {/* <div className="absolute inset-0 bg-black opacity-40"></div> */}
 
                   {/* Header on top of the background */}
-                  <Header />
+                  {/* <HeaderTwo /> */}
 
                   <div className=" container relative text-left lg:left-[-5.7rem]  mt-[280px] mb-[596px] z-10">
                         <h1 className="text-[50px] text-left    leading-[75px]   font-[500] mb-4 text-[#FFFFFF]">
