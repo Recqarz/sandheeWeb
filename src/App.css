@@ -7,6 +7,11 @@
   font-style: normal;
 }
 
+
+#root {
+  overflow-x: hidden;
+}
+
 h2 {
   font-family: "Poppins", serif;
   font-size: 96px;
