@@ -1,7 +1,4 @@
 import React from 'react'
-import HeaderTwo from '../Header/HeaderTwo'
-import FooterTwo from '../Footer/FooterTwo'
-
 const Mediation = () => {
       return (
             <>

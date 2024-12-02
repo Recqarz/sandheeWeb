@@ -149,10 +149,10 @@ const Input = styled.input`
 
   @media only screen and (min-width: 320px) and (max-width: 768px) {
     &::placeholder {
-      font-size: 14px; /* Adjust the placeholder font size */
+      font-size: 14px;
     }
     width: 326px;
-    height: 60px; /* Adjust height of the input */
+    height: 60px; 
   }
 `;
 

@@ -1,6 +1,4 @@
 import React from 'react'
-import FooterTwo from '../Footer/FooterTwo'
-import HeaderTwo from '../Header/HeaderTwo'
 
 const Conciliation = () => {
       return (

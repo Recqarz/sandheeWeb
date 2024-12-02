@@ -9,14 +9,14 @@ const ComplaintForm = () => {
       const [category, setCategory] = useState("");
       const [isFocused, setIsFocused] = useState(false);
 
-      // Handle Focus/Blur
+  
       const handleFocus = () => setIsFocused(true);
       const handleBlur = () => setIsFocused(false);
 
-      // Handle Category Change
+
       const handleCategoryChange = (e) => setCategory(e.target.value);
 
-      // Handle File Change
+
       const handleFileChange = (e) => {
             const selectedFile = e.target.files[0];
             if (selectedFile) {
@@ -37,7 +37,7 @@ const ComplaintForm = () => {
             }
       };
 
-      // Handle Form Submit
+      // Handle Form
       const handleSubmit = (e) => {
             e.preventDefault();
 
@@ -56,7 +56,7 @@ const ComplaintForm = () => {
                   return;
             }
 
-            // Display form data in console
+            
             console.log("Complaint Details:");
             console.log({
                   description,
@@ -66,7 +66,7 @@ const ComplaintForm = () => {
                   fileSize: (file.size / (1024 * 1024)).toFixed(2) + " MB",
             });
 
-            // Reset form after successful submission
+           
             setDescription("");
             setCategory("");
             setFile(null);
