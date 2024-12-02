@@ -12,13 +12,13 @@ const AboutUs = () => {
                               </div>
                               <div className="md:w-1/2 2xl:mt-12   about__conttts">
                                     <h2 className="mb-10">ABOUT US</h2>
-                                    <div className="2xl:mb-20 mb-10 ">
+                                    <div className="2xl:mb-20 mb-10 2xl:pr-[20px]">
                                           <p> Sandhée derives its meaning from the Hindi word <strong>संधि</strong>.</p>
                                           <p> It signifies an accord between countries or groups of people.</p>
                                           <p> Sandhée is basically a formal agreement between two or more people, organizations, or governments.</p>
 
                                     </div>
-                                    <div className="mb-10">
+                                    <div className="2xl:mb-10 md:mb-5 ">
                                           <p>
                                                 Sandhée aims to revolutionize dispute resolution by providing a timely, affordable, and fair platform.
                                                 They encourage businesses to settle disagreements efficiently.

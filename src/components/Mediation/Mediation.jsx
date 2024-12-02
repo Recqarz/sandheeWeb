@@ -1,9 +1,8 @@
 import React from 'react'
+
 const Mediation = () => {
       return (
             <>
-                 
-
                   <div className="bg-[#0E1926] w-screen pt-[150px] overflow-x-hidden flex justify-center items-center">
                         <div className="max-w-[1782px] h-[1489px] arbirato_bg overflow-x-hidden  ">
                               <div className="w-full h-full bg-[rgba(249,247,245,0.5)] bg-arbittt py-8 px-20 overflow-x-hidden">

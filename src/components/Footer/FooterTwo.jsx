@@ -3,8 +3,8 @@ import { MdEmail, MdPhone } from 'react-icons/md';
 
 const FooterTwo = ({className}) => {
   return (
-      <footer className={`bg-[#1b1c2e]  flex justify-center text-white py-10 px-0 ${className}`}>
-      <div className="2xl:max-w-[1782px] w-full flex flex-col justify-center items-center text-center">
+      <footer className={`bg-[#1b1c2e] w-screen  flex justify-center text-white py-10 px-0 ${className}`}>
+      <div className="max-w-[1782px] w-full  flex flex-col justify-center items-center text-center">
             <div className='footer-header'>
                   <h1>SANDHEE ADR</h1>
             </div>
