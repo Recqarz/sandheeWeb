@@ -244,37 +244,6 @@ footer {
   /* transform: rotate(180deg); */
 }
 
-@media only screen and (min-width: 320px) and (max-width: 768px) {
-  .lg\:w-\[696px\].lg\:h-\[728px\].md\:w-1\/2.icons__aboutt {
-    width: 300px;
-    height: -webkit-fill-available;
-  }
-
-  .icons__aboutt::after {
-    display: none;
-  }
-
-  .about__conttts h2 {
-    font-size: 48px;
-    line-height: 100px;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-  }
-
-  .about__conttts P {
-    font-size: 12px;
-    line-height: 20px;
-    text-align: left;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .flex.gap-4 {
-    justify-content: center;
-  }
-}
-
 /* expetise fields css  */
 
 h2.expertise {
@@ -293,6 +262,7 @@ h2.expertise::before {
   left: 16rem;
   width: 100px;
   height: -webkit-fill-available;
+  aspect-ratio: 1;
   background-image: url(/public/expertise/ec1.png);
   background-size: contain;
   background-position: center;
@@ -306,6 +276,7 @@ h2.expertise::after {
   right: 16rem;
   width: 100px;
   height: -webkit-fill-available;
+  aspect-ratio: 1;
   background-image: url(/public/expertise/ec2.png);
   background-size: contain;
   background-position: center;
@@ -343,6 +314,254 @@ a.learn-text {
 p.text-\[29px\].text-\[\#FFFFFF\].leading-\[43\.5px\].font-\[300\] {
   font-family: "Poppins", serif;
 }
+
+
+.stats--bg {
+  position: relative;
+}
+
+.stats--bg::before {
+  content: "";
+  position: absolute;
+  top: -51px;
+  bottom: 0;
+  left: 116px;
+  width: 100%;
+  height: 139px;
+  background-image: url(/public/expertise/stats.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* Ensure the image is scaled correctly */
+}
+
+
+
+/* equiry css  */
+.inquiry-bg {
+  background-image: url("/public/expertise/bginquiry.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+h2.inquiry--text {
+  font-family: "Poppins", serif;
+  line-height: 120px;
+  font-size: 80px;
+  font-weight: 400;
+  color: #001025;
+  position: relative;
+}
+
+h2.inquiry--text::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 26rem;
+  width: 100px;
+  height: -webkit-fill-available;
+  aspect-ratio: 1;
+  background-image: url(/public/expertise/ec1.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+h2.inquiry--text::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 26rem;
+  width: 100px;
+  height: -webkit-fill-available;
+  aspect-ratio: 1;
+  background-image: url(/public/expertise/ec2.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+::placeholder {
+  font-size: 20px;
+  line-height: 69.87px;
+  font-weight: 500;
+  color: #667c99;
+}
+
+select {
+  font-size: 20px;
+  line-height: 69.87px;
+  font-weight: 500;
+  color: #667c99;
+}
+
+option {
+  font-size: 20px;
+  line-height: 69.87px;
+  font-weight: 500;
+  color: #667c99;
+}
+
+/* footer  */
+.footer-header h1 {
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 90px;
+  color: #bf9874;
+}
+
+.w-full.lg\:h-\[183px\].flex.flex-wrap.lg\:flex-nowrap.justify-evenly.items-center.bg-\[\#1B314E\].px-4.py-6.lg\:py-0 {
+  margin-top: 220px;
+}
+
+
+
+.btnAtmtct {
+  width: 100%;
+  font-family: "Poppins", serif;
+  max-width: 600px;
+  height: 155px;
+  border-radius: 45px;
+  text-align: center;
+  font-size: 64px;
+  line-height: 96px;
+  font-weight: 500;
+  font-weight: 400;
+  background-color: #cb935d;
+  color: #191a23;
+  border: 1px solid #000;
+  outline: none;
+  box-shadow: 0px 5px 0px 0px rgba(25, 26, 35, 1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  margin: auto;
+  /* text-align: center; */
+}
+
+.arbtration-text {
+  font-family: "Poppins", serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+  text-align: justified;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(0, 0, 0, 1);
+}
+
+h3.arbtration-heading {
+  font-family: "Poppins", serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: justified;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(0, 0, 0, 1);
+}
+
+/* w-full max-w-[600px] h-[155px] rounded-[45px] text-center text-[2rem] md:text-[3rem] font-medium bg-[#CB935D] text-[#191A23] border-b-4 border-black shadow-lg */
+
+.arbirato_bg {
+  background-image: url(/public/arb.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-arbittt {
+  position: relative;
+}
+
+.bg-arbittt::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -85px;
+  width: 337px;
+  height: 246px;
+  background-image: url(/public/arbsidebg.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bullet-list {
+  list-style-type: disc;
+  list-style-position: outside;
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+.bullet-list li {
+  margin-bottom: 1rem;
+}
+
+
+/* user details form css  */
+
+.mb-4.flex.justify-center.udf-bttn {
+  justify-content: flex-start;
+}
+
+
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  .lg\:w-\[696px\].lg\:h-\[728px\].md\:w-1\/2.icons__aboutt {
+    width: 300px;
+    height: -webkit-fill-available;
+  }
+
+  .icons__aboutt::after {
+    display: none;
+  }
+
+  .about__conttts h2 {
+    font-size: 48px;
+    line-height: 100px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .about__conttts P {
+    font-size: 12px;
+    line-height: 20px;
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .flex.gap-4 {
+    justify-content: center;
+  }
+}
+
+
+
+
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  .stats--bg::before {
+    display: none;
+  }
+
+  .stats--bg {
+    text-align: center;
+    /* Ensure proper alignment on small screens */
+  }
+
+  .flex.flex-wrap.justify-center.lg\:justify-evenly.gap-x-\[5\.1rem\].items-center {
+    gap: 76px;
+  }
+
+  .relative.flex.flex-col.lg\:flex-row.justify-center.items-center.gap-\[6rem\].lg\:gap-16.stats--bg {
+    gap: 20px;
+  }
+}
+
+
+
 
 @media only screen and (min-width: 320px) and (max-width: 768px) {
   h2.expertise {
@@ -392,120 +611,10 @@ p.text-\[29px\].text-\[\#FFFFFF\].leading-\[43\.5px\].font-\[300\] {
   }
 }
 
-.stats--bg {
-  position: relative;
-}
 
-.stats--bg::before {
-  content: "";
-  position: absolute;
-  top: -51px;
-  bottom: 0;
-  left: 116px;
-  width: 100%;
-  height: 139px;
-  background-image: url(/public/expertise/stats.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  /* Ensure the image is scaled correctly */
-}
 
-@media only screen and (min-width: 320px) and (max-width: 768px) {
-  .stats--bg::before {
-    display: none;
-  }
 
-  .stats--bg {
-    text-align: center;
-    /* Ensure proper alignment on small screens */
-  }
-
-  .flex.flex-wrap.justify-center.lg\:justify-evenly.gap-x-\[5\.1rem\].items-center {
-    gap: 76px;
-  }
-
-  .relative.flex.flex-col.lg\:flex-row.justify-center.items-center.gap-\[6rem\].lg\:gap-16.stats--bg {
-    gap: 20px;
-  }
-}
-
-/* equiry css  */
-.inquiry-bg {
-  background-image: url("/public/expertise/bginquiry.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-h2.inquiry--text {
-  font-family: "Poppins", serif;
-  line-height: 120px;
-  font-size: 80px;
-  font-weight: 400;
-  color: #001025;
-  position: relative;
-}
-
-h2.inquiry--text::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 26rem;
-  width: 100px;
-  height: -webkit-fill-available;
-  background-image: url(/public/expertise/ec1.png);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-h2.inquiry--text::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 26rem;
-  width: 100px;
-  height: -webkit-fill-available;
-  background-image: url(/public/expertise/ec2.png);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-::placeholder {
-  font-size: 20px;
-  line-height: 69.87px;
-  font-weight: 500;
-  color: #667c99;
-}
-
-select {
-  font-size: 20px;
-  line-height: 69.87px;
-  font-weight: 500;
-  color: #667c99;
-}
-
-option {
-  font-size: 20px;
-  line-height: 69.87px;
-  font-weight: 500;
-  color: #667c99;
-}
-
-/* footer  */
-.footer-header h1 {
-  font-size: 38px;
-  font-weight: 400;
-  line-height: 90px;
-  color: #bf9874;
-}
-
-.w-full.lg\:h-\[183px\].flex.flex-wrap.lg\:flex-nowrap.justify-evenly.items-center.bg-\[\#1B314E\].px-4.py-6.lg\:py-0 {
-  margin-top: 220px;
-}
-
-@media only screen and (min-width: 320px) and (max-width: 768px) {
+@media only screen and (min-width: 320px) and (max-width: 767px) {
   .text-center.inquiry-bg.py-10.px-6.lg\:px-16 {
     padding: 0;
     margin: 0;
@@ -615,88 +724,7 @@ option {
   }
 }
 
-.btnAtmtct {
-  width: 100%;
-  font-family: "Poppins", serif;
-  max-width: 600px;
-  height: 155px;
-  border-radius: 45px;
-  text-align: center;
-  font-size: 64px;
-  line-height: 96px;
-  font-weight: 500;
-  font-weight: 400;
-  background-color: #cb935d;
-  color: #191a23;
-  border: 1px solid #000;
-  outline: none;
-  box-shadow: 0px 5px 0px 0px rgba(25, 26, 35, 1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  cursor: pointer;
-  margin: auto;
-  /* text-align: center; */
-}
-
-.arbtration-text {
-  font-family: "Poppins", serif;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 30px;
-  text-align: justified;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-  color: rgba(0, 0, 0, 1);
-}
-
-h3.arbtration-heading {
-  font-family: "Poppins", serif;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 30px;
-  text-align: justified;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-  color: rgba(0, 0, 0, 1);
-}
-
-/* w-full max-w-[600px] h-[155px] rounded-[45px] text-center text-[2rem] md:text-[3rem] font-medium bg-[#CB935D] text-[#191A23] border-b-4 border-black shadow-lg */
-
-.arbirato_bg {
-  background-image: url(/public/arb.png);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.bg-arbittt {
-  position: relative;
-}
-
-.bg-arbittt::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: -85px;
-  width: 337px;
-  height: 246px;
-  background-image: url(/public/arbsidebg.png);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.bullet-list {
-  list-style-type: disc;
-  list-style-position: outside;
-  padding-left: 1.5rem;
-  margin: 1rem 0;
-}
-
-.bullet-list li {
-  margin-bottom: 1rem;
-}
-
-@media only screen and (min-width: 320px) and (max-width: 768px) {
+@media only screen and (min-width: 320px) and (max-width: 767px) {
   .arbirato_bg {
     width: 100%;
     height: auto;
@@ -1013,8 +1041,8 @@ h3.arbtration-heading {
   }
 
 
-   /* mediation  start  */
-   .max-w-\[1782px\].h-\[1489px\].arbirato_bg.overflow-x-hidden {
+  /* mediation  start  */
+  .max-w-\[1782px\].h-\[1489px\].arbirato_bg.overflow-x-hidden {
     width: 1342px;
   }
 
@@ -1145,13 +1173,8 @@ h3.arbtration-heading {
   }
 }
 
-/* user details form css  */
 
-.mb-4.flex.justify-center.udf-bttn {
-  justify-content: flex-start;
-}
-
-@media only screen and (min-width: 320px) and (max-width: 768px) {
+@media only screen and (min-width: 320px) and (max-width: 767px) {
   .flex.w-screen.h-screen.items-center.justify-center.overflow-hidden.bg-stone-300 {
     width: 100%;
     height: 100%;
@@ -1164,7 +1187,7 @@ h3.arbtration-heading {
   }
 
   .mrnIu {
-    padding-top: 0.7rem !important ;
+    padding-top: 0.7rem !important;
     padding-bottom: 0.7rem !important;
   }
 
