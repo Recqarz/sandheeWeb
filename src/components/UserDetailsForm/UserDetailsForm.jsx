@@ -13,19 +13,60 @@ const UserDetailsForm = () => {
             gst: false,
       });
 
+      const [errors, setErrors] = useState({
+            name: "",
+            email: "",
+            phone: "",
+            pincode: "",
+            city: "",
+            state: "",
+            address: "",
+      });
+
+      const validateField = (name, value) => {
+            let errorMessage = "";
+
+            if (typeof value === "string" && !value.trim()) {
+                  errorMessage = `${name[0].toUpperCase() + name.slice(1)} is required.`;
+            } else if (name === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+                  errorMessage = "Please enter a valid email address.";
+            } else if (name === "phone" && !/^\d{10}$/.test(value)) {
+                  errorMessage = "Please enter a valid 10-digit phone number.";
+            }
+
+            setErrors((prev) => ({
+                  ...prev,
+                  [name]: errorMessage,
+            }));
+      };
+
       const handleChange = (e) => {
-            const { id, value, type, checked } = e.target;
+            const { name, value, type, checked } = e.target;
+            const newValue = type === "checkbox" ? checked : value;
+
             setFormData((prev) => ({
                   ...prev,
-                  [id]: type === "checkbox" ? checked : value,
+                  [name]: newValue,
             }));
+
+            validateField(name, newValue);
       };
 
       const handleSubmit = (e) => {
             e.preventDefault();
+
+            let hasError = false;
+            Object.keys(formData).forEach((key) => {
+                  validateField(key, formData[key]);
+                  if (typeof formData[key] === "string" && !formData[key].trim() && key !== "gst") {
+                        hasError = true;
+                  }
+            });
+
+            if (hasError) return;
+
             console.log(formData);
 
-            // Reset all fields to their initial values
             setFormData({
                   name: "",
                   email: "",
@@ -34,52 +75,57 @@ const UserDetailsForm = () => {
                   city: "",
                   state: "",
                   address: "",
-                  gst: false, // Reset the checkbox field as well
+                  gst: false,
+
+
             });
+            alert("Form submitted successfully!");
+
+            setErrors({});
       };
 
       return (
             <div className="flex w-screen h-screen items-center justify-center overflow-hidden bg-stone-300">
                   <div className="bg-[#0E1926] max-w-[640px] w-full h-full 2xl:max-w-[640px] 2xl:h-[1080px] overflow-hidden px-4 py-4 2xl:py-20 sm:px-6 md:px-10">
                         <div className="flex items-start">
-                              <h2 className="text-[20px] leading-[24.2px] font-[600] text-[#FFFFFF] ">Step 1 :</h2>
-                              <h3 className="text-[20px] leading-[24.2px] font-[600] font-[Inter] ml-[60px] 2xl:ml-[80px] ">Your Details</h3>
+                              <h2 className="text-[20px] leading-[24.2px] font-[600] text-[#FFFFFF]">Step 1 :</h2>
+                              <h3 className="text-[20px] leading-[24.2px] font-[600] font-[Inter] ml-[60px] 2xl:ml-[80px]">Your Details</h3>
                         </div>
                         <form className="mt-4" onSubmit={handleSubmit}>
                               <div className="mb-4">
                                     <Label htmlFor="name">Name*</Label>
                                     <Input
                                           type="text"
-                                          id="name"
+                                          name="name"
                                           value={formData.name}
                                           onChange={handleChange}
                                           placeholder="Enter your name"
-                                          required
                                     />
+                                    {errors.name && <ErrorMessage>{errors.name}</ErrorMessage>}
                               </div>
 
                               <div className="mb-4">
                                     <Label htmlFor="email">Email Address*</Label>
                                     <Input
                                           type="email"
-                                          id="email"
+                                          name="email"
                                           value={formData.email}
                                           onChange={handleChange}
                                           placeholder="Enter your email"
-                                          required
                                     />
+                                    {errors.email && <ErrorMessage>{errors.email}</ErrorMessage>}
                               </div>
 
                               <div className="mb-4">
                                     <Label htmlFor="phone">Phone Number*</Label>
                                     <Input
                                           type="tel"
-                                          id="phone"
+                                          name="phone"
                                           value={formData.phone}
                                           onChange={handleChange}
                                           placeholder="Enter your phone number"
-                                          required
                                     />
+                                    {errors.phone && <ErrorMessage>{errors.phone}</ErrorMessage>}
                               </div>
 
                               <div className="mb-4 flex flex-col sm:flex-row sm:space-x-4">
@@ -87,23 +133,23 @@ const UserDetailsForm = () => {
                                           <Label htmlFor="pincode">Pincode*</Label>
                                           <Input
                                                 type="text"
-                                                id="pincode"
+                                                name="pincode"
                                                 value={formData.pincode}
                                                 onChange={handleChange}
                                                 placeholder="Enter your pincode"
-                                                required
                                           />
+                                          {errors.pincode && <ErrorMessage>{errors.pincode}</ErrorMessage>}
                                     </div>
                                     <div className="w-full sm:w-[48%]">
                                           <Label htmlFor="city">City*</Label>
                                           <Input
                                                 type="text"
-                                                id="city"
+                                                name="city"
                                                 value={formData.city}
                                                 onChange={handleChange}
                                                 placeholder="Enter your city"
-                                                required
                                           />
+                                          {errors.city && <ErrorMessage>{errors.city}</ErrorMessage>}
                                     </div>
                               </div>
 
@@ -111,18 +157,18 @@ const UserDetailsForm = () => {
                                     <Label htmlFor="state">State*</Label>
                                     <Input
                                           type="text"
-                                          id="state"
+                                          name="state"
                                           value={formData.state}
                                           onChange={handleChange}
                                           placeholder="Enter your state"
-                                          required
                                     />
+                                    {errors.state && <ErrorMessage>{errors.state}</ErrorMessage>}
                               </div>
 
                               <div className="mb-4">
                                     <Label htmlFor="address">Address</Label>
                                     <Input
-                                          id="address"
+                                          name="address"
                                           value={formData.address}
                                           onChange={handleChange}
                                           placeholder="Enter your address"
@@ -130,9 +176,9 @@ const UserDetailsForm = () => {
                               </div>
 
                               <div className="mb-4 flex justify-center udf-bttn">
-                                    <Chackbox
+                                    <Checkbox
                                           type="checkbox"
-                                          id="gst"
+                                          name="gst"
                                           checked={formData.gst}
                                           onChange={handleChange}
                                     />
@@ -152,7 +198,7 @@ const UserDetailsForm = () => {
 
 export default UserDetailsForm;
 
-// Styled components
+// Styled Components
 const Label = styled.label`
   display: block;
   font-family: "Inter", sans-serif;
@@ -188,7 +234,7 @@ const Input = styled.input`
   }
 `;
 
-const Chackbox = styled.input`
+const Checkbox = styled.input`
   width: 20px;
 `;
 
@@ -207,4 +253,12 @@ const Button = styled.button`
     height: 60px;
     width: 150px;
   }
+`;
+
+const ErrorMessage = styled.span`
+  color: red;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 0.25rem;
+  display: block;
 `;

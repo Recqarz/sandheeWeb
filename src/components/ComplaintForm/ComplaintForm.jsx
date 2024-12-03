@@ -9,13 +9,18 @@ const ComplaintForm = () => {
       const [category, setCategory] = useState("");
       const [isFocused, setIsFocused] = useState(false);
 
-  
+      // Error states
+      const [descriptionError, setDescriptionError] = useState("");
+      const [categoryError, setCategoryError] = useState("");
+      const [fileError, setFileError] = useState("");
+
       const handleFocus = () => setIsFocused(true);
       const handleBlur = () => setIsFocused(false);
 
-
-      const handleCategoryChange = (e) => setCategory(e.target.value);
-
+      const handleCategoryChange = (e) => {
+            setCategory(e.target.value);
+            setCategoryError(""); // Clear error on valid input
+      };
 
       const handleFileChange = (e) => {
             const selectedFile = e.target.files[0];
@@ -24,39 +29,51 @@ const ComplaintForm = () => {
                   const allowedTypes = ["image/jpeg", "image/png", "application/pdf"];
 
                   if (!allowedTypes.includes(selectedFile.type)) {
-                        alert("Invalid file type. Only JPEG, PNG, and PDF files are allowed.");
+                        setFileError("Invalid file type. Only JPEG, PNG, and PDF files are allowed.");
                         return;
                   }
 
                   if (fileSizeMB > 5) {
-                        alert("File size should not exceed 5MB.");
+                        setFileError("File size should not exceed 5MB.");
                         return;
                   }
 
                   setFile(selectedFile);
+                  setFileError(""); // Clear error on valid input
             }
       };
 
-      // Handle Form
       const handleSubmit = (e) => {
             e.preventDefault();
 
+            let hasError = false;
+
             if (!description.trim()) {
-                  alert("Description is required.");
-                  return;
+                  setDescriptionError("Description is required.");
+                  hasError = true;
+
+            } else {
+                  setDescriptionError("");
             }
 
+
+
             if (!category) {
-                  alert("Please select a category.");
-                  return;
+                  setCategoryError("Please select a category.");
+                  hasError = true;
+            } else {
+                  setCategoryError("");
             }
 
             if (!file) {
-                  alert("Please attach a proof file.");
-                  return;
+                  setFileError("Please attach a proof file.");
+                  hasError = true;
+            } else {
+                  setFileError("");
             }
 
-            
+            if (hasError) return;
+
             console.log("Complaint Details:");
             console.log({
                   description,
@@ -66,11 +83,21 @@ const ComplaintForm = () => {
                   fileSize: (file.size / (1024 * 1024)).toFixed(2) + " MB",
             });
 
-           
             setDescription("");
             setCategory("");
             setFile(null);
             alert("Form submitted successfully!");
+      };
+
+      const handleDescriptionChange = (e) => {
+            const value = e.target.value;
+            setDescription(value);
+
+            if (!value.trim()) {
+                  setDescriptionError("Description is required.");
+            } else {
+                  setDescriptionError(""); // Clear error if there's valid input
+            }
       };
 
       return (
@@ -89,12 +116,12 @@ const ComplaintForm = () => {
                                     <Label htmlFor="description">Description*</Label>
                                     <textarea
                                           id="description"
-                                          className=" w-max-[541px] h-[322px] w-full font-normal text-[#000] text-[1rem] bg-[#FFFFFF] rounded-[17px] pl-5 py-4 focus:outline-none placeholder:text-[#343434]"
+                                          className="w-full max-w-[541px] h-[322px] font-normal text-[#000] text-[1rem] bg-[#FFFFFF] rounded-[17px] pl-5 py-4 focus:outline-none placeholder:text-[#343434]"
                                           placeholder="Describe your complaint..."
                                           value={description}
-                                          onChange={(e) => setDescription(e.target.value)}
-                                          required
+                                          onChange={handleDescriptionChange}
                                     />
+                                    {descriptionError && <ErrorMessage>{descriptionError}</ErrorMessage>}
                               </FormGroup>
 
                               {/* Category */}
@@ -103,39 +130,30 @@ const ComplaintForm = () => {
                                     <div className="relative">
                                           <select
                                                 id="category"
-                                                className="appearance-none w-full 2xl:w-[541px] h-[60px] 2xl:h-[74px] px-5 text-[#343434] focus:outline-none  rounded-[17px]"
+                                                className="appearance-none w-full max-w-[541px] h-[60px] px-5 text-[#343434] focus:outline-none rounded-[17px]"
                                                 value={category}
                                                 onChange={handleCategoryChange}
                                                 onFocus={handleFocus}
                                                 onBlur={handleBlur}
-                                                required
                                           >
                                                 <option value="">Select One</option>
                                                 <option value="category1">Category 1</option>
                                                 <option value="category2">Category 2</option>
                                                 <option value="category3">Category 3</option>
                                           </select>
-
-                                          {/* Custom Dropdown Icon */}
-                                          <div className="absolute inset-y-0 right-5 flex items-center pointer-events-none">
-                                                {isFocused ? (
-                                                      <IoMdArrowDropup className="text-gray-500 text-2xl relative right-[-15rem]" />
-                                                ) : (
-                                                      <IoMdArrowDropdown className="text-gray-500 text-2xl relative right-[-15rem]" />
-                                                )}
-                                          </div>
+                                          {categoryError && <ErrorMessage>{categoryError}</ErrorMessage>}
                                     </div>
                               </FormGroup>
 
                               {/* File Upload */}
                               <FormGroup>
                                     <Label htmlFor="file">Attach Proof*</Label>
-                                    <div className="flex justify-between w-full max-w-[541px] h-[60px] 2xl:h-[74px] items-center mt-2 p-3 bg-white rounded-[17px]">
-                                          <span className="text-[8px] 2xl:text-[14px] font-[400] text-[#343434]">
+                                    <div className="flex justify-between w-full max-w-[541px] h-[60px] items-center mt-2 p-3 bg-white rounded-[17px]">
+                                          <span className="text-[8px] text-[#343434]">
                                                 Only jpeg, png, jpg, pdf files are allowed (up to 5MB).
                                           </span>
                                           <label htmlFor="file" className="text-gray-500 text-2xl cursor-pointer">
-                                                <IoAttachOutline className="relative right-[0rem] 2xl:right-[0rem]" />
+                                                <IoAttachOutline />
                                           </label>
                                           <input
                                                 type="file"
@@ -146,6 +164,7 @@ const ComplaintForm = () => {
                                                 onChange={handleFileChange}
                                           />
                                     </div>
+                                    {fileError && <ErrorMessage>{fileError}</ErrorMessage>}
                               </FormGroup>
 
                               {/* Buttons */}
@@ -160,7 +179,6 @@ const ComplaintForm = () => {
             </div>
       );
 };
-
 export default ComplaintForm;
 
 /* Styled Components */
@@ -225,4 +243,13 @@ const FormGroup = styled.div`
   margin-bottom: 1.5rem;
   max-width:541px;
   weight:100%;
+`;
+
+
+const ErrorMessage = styled.span`
+  color: red;
+  font-size: 1rem;
+  margin-top: 0.25rem;
+  font-weight:600;
+  display: block;
 `;

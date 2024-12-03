@@ -52,7 +52,7 @@ const HeaderTwo = ({className}) => {
                                                       to={path}
                                                       className={({ isActive }) =>
                                                             classNames(
-                                                                  "font-medium text-[14px] 2xl:text-[18px] sm:text-[12px] leading-[28px] tracking-[1px]",
+                                                                  "font-medium nav__texttt  text-[14px] md:text-[12px] 2xl:text-[18px] sm:text-[12px] leading-[28px] tracking-[1px]",
                                                                   isActive
                                                                         ? "text-[#FFFFFF] underline underline-offset-4 decoration-2"
                                                                         : "text-gray-500",

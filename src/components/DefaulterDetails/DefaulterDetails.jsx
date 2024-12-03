@@ -8,46 +8,65 @@ const DefaulterDetails = () => {
     phone: "",
   });
 
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    phone: "",
+  });
+
+  const validateField = (name, value) => {
+    let errorMessage = "";
+
+    if (!value.trim()) {
+      errorMessage = `${name[0].toUpperCase() + name.slice(1)} is required.`;
+    } else if (name === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+      errorMessage = "Please enter a valid email address.";
+    } else if (name === "phone" && !/^\d{10}$/.test(value)) {
+      errorMessage = "Please enter a valid 10-digit phone number.";
+    }
+
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      [name]: errorMessage,
+    }));
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({ ...prevState, [name]: value }));
+
+    // Validate the field on change
+    validateField(name, value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { name, email, phone } = formData;
+    let hasError = false;
 
-    // Validation
-    if (!name.trim()) {
-      alert("Name is required.");
-      return;
-    }
+    // Validate all fields on submit
+    Object.keys(formData).forEach((key) => {
+      validateField(key, formData[key]);
+      if (!formData[key].trim()) {
+        hasError = true;
+      }
+    });
 
-    if (!email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      alert("Please enter a valid email address.");
-      return;
-    }
+    if (hasError) return;
 
-    if (!phone.trim() || !/^\d{10}$/.test(phone)) {
-      alert("Please enter a valid 10-digit phone number.");
-      return;
-    }
+    console.log("Defaulter Details Submitted:", formData);
 
-    // Success: Log form data
-    console.log("Defaulter Details Submitted:");
-    console.log({ name, email, phone });
-
-    // Reset form after submission
     setFormData({
       name: "",
       email: "",
       phone: "",
     });
+
+    setErrors({});
     alert("Form submitted successfully!");
   };
 
   return (
-    <div className="flex items-center justify-center w-screen h-screen overflow-hidden bg-stone-300 defaulter ">
+    <div className="flex items-center justify-center w-screen h-screen overflow-hidden bg-stone-300 defaulter">
       <div className="bg-[#0E1926] max-w-[640px] w-full h-full 2xl:max-w-[640px] 2xl:h-[1080px] overflow-hidden px-4 py-4 2xl:py-20 sm:px-6 md:px-10">
         <div className="flex items-start mb-6 pt-2">
           <h2 className="text-[20px] leading-[24.2px] font-[600] font-[Inter]">Step 3 :</h2>
@@ -69,10 +88,9 @@ const DefaulterDetails = () => {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full p-2 rounded-[17px] py-[1rem] px-6 bg-[#fff] text-black placeholder-gray-400 focus:outline-none"
                 placeholder="Enter your name"
-                required
               />
+              {errors.name && <ErrorMessage>{errors.name}</ErrorMessage>}
             </div>
 
             {/* Email Input */}
@@ -83,10 +101,9 @@ const DefaulterDetails = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full p-2 rounded-[17px] py-[1rem] px-6 bg-[#fff] text-black placeholder-gray-400 focus:outline-none"
                 placeholder="Enter your email"
-                required
               />
+              {errors.email && <ErrorMessage>{errors.email}</ErrorMessage>}
             </div>
 
             {/* Phone Input */}
@@ -97,10 +114,9 @@ const DefaulterDetails = () => {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full p-2 rounded-[17px] py-[1rem] px-6 bg-[#fff] text-black placeholder-gray-400 focus:outline-none"
                 placeholder="Enter your phone number"
-                required
               />
+              {errors.phone && <ErrorMessage>{errors.phone}</ErrorMessage>}
             </div>
           </div>
 
@@ -148,11 +164,8 @@ const Input = styled.input`
   }
 
   @media only screen and (min-width: 320px) and (max-width: 768px) {
-    &::placeholder {
-      font-size: 14px;
-    }
     width: 326px;
-    height: 60px; 
+    height: 60px;
   }
 `;
 
@@ -160,14 +173,13 @@ const Button = styled.button`
   width: 181px;
   height: 74px;
   border-radius: 17px;
-  background-color: #cb935d;
+  background-color: ${(props) => (props.variant === "secondary" ? "#f0f0f0" : "#cb935d")};
   font-family: "Inter";
   font-size: 20px;
   font-weight: 400;
   line-height: 24.2px;
   text-align: center;
   color: ${(props) => (props.variant === "secondary" ? "#333" : "#fff")};
-  background-color: ${(props) => (props.variant === "secondary" ? "#f0f0f0" : "#cb935d")};
   cursor: pointer;
 
   &:focus {
@@ -177,4 +189,12 @@ const Button = styled.button`
   @media only screen and (min-width: 320px) and (max-width: 768px) {
     height: 60px;
   }
+`;
+
+const ErrorMessage = styled.span`
+  color: red;
+  font-size: 1rem;
+  font-weight:600;
+  margin-top: 0.25rem;
+  display: block;
 `;
