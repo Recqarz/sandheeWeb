@@ -937,7 +937,7 @@ h3.arbtration-heading {
   }
 }
 
-@media only screen and (min-width: 1400px) and (max-width: 1536px) {
+@media only screen and (min-width: 1535px) and (max-width: 1536px) {
   .max-w-\[1782px\].mx-auto.flex.justify-between.items-center {
     gap: 17rem;
     justify-content: space-around;
@@ -989,6 +989,13 @@ h3.arbtration-heading {
 
   .icons__aboutt::after {
     bottom: 24rem;
+  }
+
+  @-moz-document url-prefix() {
+    .icons__aboutt::after {
+      bottom: 12rem;
+    }
+  
   }
 
   .about__conttts P {
