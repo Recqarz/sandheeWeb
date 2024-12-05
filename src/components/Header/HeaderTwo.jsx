@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { FiMenu, FiX, FiChevronDown, FiChevronRight } from "react-icons/fi";
 import Image from "/public/logo.png";
 
@@ -8,11 +8,11 @@ const navLinks = [
       { name: "ABOUT", path: "/about-us" },
       {
             name: "ARBITRATION",
-            path: "/Arbitration",
-            // children: [
-            //       { name: "What is Arbitration", path: "/arbitration/arbitration-rules" },
-            //       { name: "Domestic Rules", path: "arbitration/arbitration-rules" },
-            // ],
+            path: "/",
+            children: [
+                  { name: "What is Arbitration", path: "/arbitration" },
+                  { name: "Domestic Rules", path: "arbitration/arbitration-rules" },
+            ],
       },
       { name: "MEDIATION", path: "/mediation" },
       { name: "CONCILIATION", path: "/conciliation" },
@@ -25,6 +25,7 @@ const classNames = (...classes) => classes.filter(Boolean).join(" ");
 const HeaderTwo = ({ className }) => {
       const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
       const [dropdownOpen, setDropdownOpen] = useState(null); // Manage dropdown state
+      const [navColor, setNavColor] = useState("transparent")
 
       const toggleMobileMenu = () => setIsMobileMenuOpen((prev) => !prev);
 
@@ -32,9 +33,33 @@ const HeaderTwo = ({ className }) => {
             setDropdownOpen((prev) => (prev === name ? null : name));
       };
 
+      const location = useLocation();
+      
+      function handleNavColor(path) {
+            const blackPaths = new Set([
+                  "/contact",
+                  "/arbitration/arbitration-rules"
+            ]);
+
+            if (blackPaths.has(path)) {
+                  setNavColor("#1b1c2e"); 
+            } else {
+                  setNavColor("transparent"); 
+            }
+      }
+
+    
+      useEffect(() => {
+            handleNavColor(location.pathname);
+      }, [location.pathname]);
+
+
+
       return (
-            <header className={`absolute top-0 left-0 w-full z-50 py-4 ${className}`}>
-                  <div className="max-w-[1782px] mx-auto flex justify-between items-center">
+            <header className={`absolute bg-${navColor} top-0 left-0 w-full z-50 py-4 ${className}`}
+            style={{ backgroundColor: navColor }}
+            >
+                  <div className="max-w-[1782px] mx-auto flex justify-between   items-center">
                         {/* Logo */}
                         <Link to="/" className="w-[198px] h-[118px]">
                               <img src={Image} alt="logo" className="w-full h-full object-cover" />
@@ -58,7 +83,7 @@ const HeaderTwo = ({ className }) => {
                                     isMobileMenuOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
                               )}
                         >
-                              <ul className="flex flex-col md:flex-row gap-[40px] items-center md:gap-[24px] p-8 md:p-0">
+                              <ul className="flex flex-col md:flex-row gap-[40px] items-center justify-center md:gap-[24px] p-8 md:p-0">
                                     {navLinks.map(({ name, path, children }) => (
                                           <li
                                                 key={path}
@@ -71,7 +96,9 @@ const HeaderTwo = ({ className }) => {
                                                       onClick={() => handleDropdown(name)}
                                                 >
                                                       <NavLink
+                                                            onClick={() => handleNavColor(path)}
                                                             to={path}
+                                                            
                                                             className={({ isActive }) =>
                                                                   classNames(
                                                                         "font-medium nav__texttt text-[14px] md:text-[12px] 2xl:text-[18px] sm:text-[12px] leading-[28px] tracking-[1px]",
@@ -94,7 +121,7 @@ const HeaderTwo = ({ className }) => {
 
                                                 {/* Dropdown Menu */}
                                                 {children && dropdownOpen === name && (
-                                                      <ul className="absolute left-0 mt-2 bg-black bg-opacity-90 p-4 rounded-lg shadow-lg">
+                                                      <ul className="fixed z-10   md:absolute md:left-0 mt-2 bg-[#1b1c2e] text-[#fff]  p-4 ">
                                                             {children.map(({ name: childName, path: childPath }) => (
                                                                   <li
                                                                         key={childPath}
@@ -103,7 +130,7 @@ const HeaderTwo = ({ className }) => {
                                                                         <FiChevronRight className="text-gray-400" />
                                                                         <NavLink
                                                                               to={childPath}
-                                                                              className="text-gray-400 hover:text-white transition duration-300 text-[14px]"
+                                                                              className="text-[#fff] hover:text-[#fff] transition duration-300 text-[14px]"
                                                                               onClick={() => setIsMobileMenuOpen(false)}
                                                                         >
                                                                               {childName}

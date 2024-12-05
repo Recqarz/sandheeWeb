@@ -1,20 +1,16 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './App.css';
 import HomePages from './components/HomePages';
-import ArbitrationCard from './components/ArbitrationCard/ArbitrationCard';
 import Mediation from './components/Mediation/Mediation';
 import Conciliation from './components/Conciliation/Conciliation';
-import ComplaintForm from './components/ComplaintForm/ComplaintForm';
-import UserDetailsForm from './components/UserDetailsForm/UserDetailsForm';
-import DefaulterDetails from './components/DefaulterDetails/DefaulterDetails';
-import About from './components/About/About';
 import AboutUs from './components/About/AboutUs';
 import Arbitration from './components/Arbitration/Arbitration';
 import Layout from './components/Layout'; // Import Layout component
 import Location from './components/Location/Location';
-import Contact from './components/Contact/Contact';
-import ErrorPage from './components/Error/ErrorPage'; // Import ErrorPage component
+import ErrorPage from './components/Error/ErrorPage';
 import ArbitrationRules from './components/ArbitrationRules/ArbitrationRules';
+import InquiryForm from './components/InquiryForm/InquiryForm';
+import Contact from './components/Contact/Contact';
 
 // Create the router using createBrowserRouter
 const router = createBrowserRouter([
@@ -25,10 +21,14 @@ const router = createBrowserRouter([
       { index: true, element: <HomePages /> },
       { path: "about-us", element: <AboutUs /> },
       { path: "arbitration", element: <Arbitration /> },
+      {
+        path: "arbitration/arbitration-rules",
+        element: <ArbitrationRules />,
+      },
       { path: "mediation", element: <Mediation /> },
       { path: "conciliation", element: <Conciliation /> },
-      // { path: "location", element: <Location /> },
-      // { path: "contact", element: <Contact /> },
+      { path: "location", element: <Location /> },
+      { path: "contact", element: <Contact /> },
     ],
   },
   {

@@ -315,7 +315,6 @@ p.text-\[29px\].text-\[\#FFFFFF\].leading-\[43\.5px\].font-\[300\] {
   font-family: "Poppins", serif;
 }
 
-
 .stats--bg {
   position: relative;
 }
@@ -333,8 +332,6 @@ p.text-\[29px\].text-\[\#FFFFFF\].leading-\[43\.5px\].font-\[300\] {
   background-size: contain;
   /* Ensure the image is scaled correctly */
 }
-
-
 
 /* equiry css  */
 .inquiry-bg {
@@ -414,8 +411,6 @@ option {
   margin-top: 220px;
 }
 
-
-
 .btnAtmtct {
   width: 100%;
   font-family: "Poppins", serif;
@@ -469,6 +464,20 @@ h3.arbtration-heading {
   background-repeat: no-repeat;
 }
 
+.conciliatio_bg {
+  background-image: url(/public/concillbg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.mediation_bg {
+  background-image: url(/public/madiatttbg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .bg-arbittt {
   position: relative;
 }
@@ -486,6 +495,9 @@ h3.arbtration-heading {
   background-repeat: no-repeat;
 }
 
+.bg-conillll {
+}
+
 .bullet-list {
   list-style-type: disc;
   list-style-position: outside;
@@ -497,7 +509,6 @@ h3.arbtration-heading {
   margin-bottom: 1rem;
 }
 
-
 /* user details form css  */
 
 .mb-4.flex.justify-center.udf-bttn {
@@ -507,8 +518,6 @@ h3.arbtration-heading {
 .roman-numerals {
   list-style-type: upper-roman;
 }
-
-
 
 @media only screen and (min-width: 320px) and (max-width: 768px) {
   .lg\:w-\[696px\].lg\:h-\[728px\].md\:w-1\/2.icons__aboutt {
@@ -539,11 +548,11 @@ h3.arbtration-heading {
   .flex.gap-4 {
     justify-content: center;
   }
+
+  .text-center.inquiry-bg.py-10.mt-\[150px\].lg\:mt-32.px-6.lg\:px-16 {
+    margin-top: 150px;
+  }
 }
-
-
-
-
 
 @media only screen and (min-width: 320px) and (max-width: 768px) {
   .stats--bg::before {
@@ -564,9 +573,6 @@ h3.arbtration-heading {
   }
 }
 
-
-
-
 @media only screen and (min-width: 320px) and (max-width: 768px) {
   h2.expertise {
     font-size: 34px;
@@ -577,13 +583,11 @@ h3.arbtration-heading {
   h2.expertise::before,
   h2.expertise::after {
     width: 50px;
-    left: 2rem;
-    right: 2rem;
-    height: auto;
+    display: none;
   }
 
   p.vision-textt {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 24px;
     margin-bottom: 20px;
   }
@@ -614,9 +618,6 @@ h3.arbtration-heading {
     gap: 4px;
   }
 }
-
-
-
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   .text-center.inquiry-bg.py-10.px-6.lg\:px-16 {
@@ -654,7 +655,8 @@ h3.arbtration-heading {
   }
 
   p.vision-textt.vmb__text {
-    font-size: 12px;
+    font-size: 10px;
+    line-height: 0;
   }
 
   .mb-\[222px\].mt-\[127px\] {
@@ -733,6 +735,21 @@ h3.arbtration-heading {
     width: 100%;
     height: auto;
     padding: 10px;
+  }
+
+  .conciliatio_bg {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+  .mediation_bg {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .w-full.h-full.bg-\[rgba\(249\,247\,245\,0\.5\)\].bg-arbitrate.py-8.px-20.overflow-x-hidden {
+    padding: 1rem;
   }
 
   .bg-arbittt {
@@ -999,6 +1016,7 @@ h3.arbtration-heading {
     .icons__aboutt::after {
       bottom: 12rem;
     }
+
     .lg\:w-\[696px\].lg\:h-\[728px\].md\:w-1\/2.icons__aboutt {
       width: 500px;
       height: 100%;
@@ -1007,6 +1025,7 @@ h3.arbtration-heading {
     h2.expertise::before {
       height: 100%;
     }
+
     h2.expertise::after {
       height: 100%;
     }
@@ -1069,7 +1088,6 @@ h3.arbtration-heading {
     gap: 60rem;
   }
 
-
   /* mediation  start  */
   .max-w-\[1782px\].h-\[1489px\].arbirato_bg.overflow-x-hidden {
     width: 1342px;
@@ -1085,43 +1103,38 @@ h3.arbtration-heading {
     font-size: 16px;
   }
 
-
-
   @supports (-webkit-touch-callout: none) {
     .icons__aboutt::after {
       bottom: 13rem !important;
       right: -6.9rem !important;
     }
-  
+
     .lg\:w-\[696px\].lg\:h-\[728px\].md\:w-1\/2.icons__aboutt {
       width: 500px;
       height: 100%;
     }
-  
+
     h2.expertise::before {
       height: 100%;
     }
-  
+
     h2.expertise::after {
       height: 100%;
     }
-  
+
     h2.inquiry--text::before {
       height: 100%;
       left: 21rem !important;
     }
-  
+
     h2.inquiry--text::after {
       height: 100%;
       left: 21rem !important;
     }
   }
-  
 }
 
 @media only screen and (min-width: 1537px) and (max-width: 1900px) {
-
-
   .max-w-\[1782px\].mx-auto.flex.justify-between.items-center {
     gap: 31rem;
     justify-content: space-around;
@@ -1234,7 +1247,6 @@ h3.arbtration-heading {
     height: 130px;
   }
 }
-
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   .flex.w-screen.h-screen.items-center.justify-center.overflow-hidden.bg-stone-300 {
