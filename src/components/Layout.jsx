@@ -1,16 +1,30 @@
-import React from 'react'
-import HeaderTwo from './Header/HeaderTwo'
-import { Outlet } from 'react-router-dom'
-import FooterTwo from './Footer/FooterTwo'
+import React from 'react';
+import HeaderTwo from './Header/HeaderTwo';
+import { Outlet, useLocation } from 'react-router-dom';
+import FooterTwo from './Footer/FooterTwo';
 
 const Layout = () => {
-      return (
-            <div>
-                  <HeaderTwo />
-                  <Outlet />
-                  <FooterTwo />
-            </div>
-      )
-}
+    const location = useLocation();
 
-export default Layout
+
+    const getBackgroundColor = () => {
+        switch (location.pathname) {
+            case '/contact':
+                return 'red';
+            default:
+                return '#fff';
+        }
+    };
+
+    return (
+        <div>
+            <HeaderTwo bgColor={getBackgroundColor()} />
+            <main>
+                <Outlet />
+            </main>
+            <FooterTwo />
+        </div>
+    );
+};
+
+export default Layout;

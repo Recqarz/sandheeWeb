@@ -504,6 +504,10 @@ h3.arbtration-heading {
   justify-content: flex-start;
 }
 
+.roman-numerals {
+  list-style-type: upper-roman;
+}
+
 
 
 @media only screen and (min-width: 320px) and (max-width: 768px) {
@@ -995,7 +999,25 @@ h3.arbtration-heading {
     .icons__aboutt::after {
       bottom: 12rem;
     }
-  
+    .lg\:w-\[696px\].lg\:h-\[728px\].md\:w-1\/2.icons__aboutt {
+      width: 500px;
+      height: 100%;
+    }
+
+    h2.expertise::before {
+      height: 100%;
+    }
+    h2.expertise::after {
+      height: 100%;
+    }
+
+    h2.inquiry--text::before {
+      height: 100%;
+    }
+
+    h2.inquiry--text::after {
+      height: 100%;
+    }
   }
 
   .about__conttts P {
@@ -1062,6 +1084,39 @@ h3.arbtration-heading {
   .arbtration-text {
     font-size: 16px;
   }
+
+
+
+  @supports (-webkit-touch-callout: none) {
+    .icons__aboutt::after {
+      bottom: 13rem !important;
+      right: -6.9rem !important;
+    }
+  
+    .lg\:w-\[696px\].lg\:h-\[728px\].md\:w-1\/2.icons__aboutt {
+      width: 500px;
+      height: 100%;
+    }
+  
+    h2.expertise::before {
+      height: 100%;
+    }
+  
+    h2.expertise::after {
+      height: 100%;
+    }
+  
+    h2.inquiry--text::before {
+      height: 100%;
+      left: 21rem !important;
+    }
+  
+    h2.inquiry--text::after {
+      height: 100%;
+      left: 21rem !important;
+    }
+  }
+  
 }
 
 @media only screen and (min-width: 1537px) and (max-width: 1900px) {

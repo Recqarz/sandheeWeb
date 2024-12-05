@@ -14,6 +14,7 @@ import Layout from './components/Layout'; // Import Layout component
 import Location from './components/Location/Location';
 import Contact from './components/Contact/Contact';
 import ErrorPage from './components/Error/ErrorPage'; // Import ErrorPage component
+import ArbitrationRules from './components/ArbitrationRules/ArbitrationRules';
 
 // Create the router using createBrowserRouter
 const router = createBrowserRouter([
@@ -26,8 +27,8 @@ const router = createBrowserRouter([
       { path: "arbitration", element: <Arbitration /> },
       { path: "mediation", element: <Mediation /> },
       { path: "conciliation", element: <Conciliation /> },
-      { path: "location", element: <Location /> },
-      { path: "contact", element: <Contact /> },
+      // { path: "location", element: <Location /> },
+      // { path: "contact", element: <Contact /> },
     ],
   },
   {
