@@ -9,7 +9,7 @@ const Conciliation = () => {
                                     <div className="flex justify-between items-center mt-0 2xl:mb-16 2xl:mt-10">
                                           <button className="btnAtmtct">CONCILIATION</button>
                                     </div>
-            
+
                                     <div className="mt-10">
                                           <p className="arbtration-text mb-5">
                                                 Conciliation typically involves the following steps:

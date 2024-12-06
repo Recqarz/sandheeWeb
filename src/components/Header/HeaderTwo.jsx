@@ -34,7 +34,7 @@ const HeaderTwo = ({ className }) => {
       };
 
       const location = useLocation();
-      
+
       function handleNavColor(path) {
             const blackPaths = new Set([
                   "/contact",
@@ -42,13 +42,13 @@ const HeaderTwo = ({ className }) => {
             ]);
 
             if (blackPaths.has(path)) {
-                  setNavColor("#1b1c2e"); 
+                  setNavColor("#1b1c2e");
             } else {
-                  setNavColor("transparent"); 
+                  setNavColor("transparent");
             }
       }
 
-    
+
       useEffect(() => {
             handleNavColor(location.pathname);
       }, [location.pathname]);
@@ -57,7 +57,7 @@ const HeaderTwo = ({ className }) => {
 
       return (
             <header className={`absolute bg-${navColor} top-0 left-0 w-full z-50 py-4 ${className}`}
-            style={{ backgroundColor: navColor }}
+                  style={{ backgroundColor: navColor }}
             >
                   <div className="max-w-[1782px] mx-auto flex justify-between   items-center">
                         {/* Logo */}
@@ -98,7 +98,7 @@ const HeaderTwo = ({ className }) => {
                                                       <NavLink
                                                             onClick={() => handleNavColor(path)}
                                                             to={path}
-                                                            
+
                                                             className={({ isActive }) =>
                                                                   classNames(
                                                                         "font-medium nav__texttt text-[14px] md:text-[12px] 2xl:text-[18px] sm:text-[12px] leading-[28px] tracking-[1px]",
@@ -113,6 +113,7 @@ const HeaderTwo = ({ className }) => {
                                                       </NavLink>
                                                       {children && (
                                                             <FiChevronDown
+                                                                  size={24}
                                                                   className={`ml-2 text-white transition-transform duration-300 ${dropdownOpen === name ? "rotate-180" : ""
                                                                         }`}
                                                             />
