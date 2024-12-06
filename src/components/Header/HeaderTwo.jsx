@@ -8,9 +8,9 @@ const navLinks = [
       { name: "ABOUT", path: "/about-us" },
       {
             name: "ARBITRATION",
-            path: "/",
+            path: "/arbitration",
             children: [
-                  { name: "What is Arbitration", path: "/arbitration" },
+                  { name: "What is Arbitration", path: "/arbitration/whatIsArbiration" },
                   { name: "Domestic Rules", path: "arbitration/arbitration-rules" },
             ],
       },

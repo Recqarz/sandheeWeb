@@ -20,7 +20,11 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <HomePages /> },
       { path: "about-us", element: <AboutUs /> },
-      { path: "arbitration", element: <Arbitration /> },
+      { path: "arbitration", element: <HomePages /> },
+      {
+        path: "arbitration/whatIsArbiration",
+        element: <Arbitration />,
+      },
       {
         path: "arbitration/arbitration-rules",
         element: <ArbitrationRules />,
