@@ -495,8 +495,7 @@ h3.arbtration-heading {
   background-repeat: no-repeat;
 }
 
-.bg-conillll {
-}
+.bg-conillll {}
 
 .bullet-list {
   list-style-type: disc;
@@ -742,6 +741,7 @@ h3.arbtration-heading {
     height: auto;
     padding: 10px;
   }
+
   .mediation_bg {
     width: 100%;
     height: auto;
@@ -1300,6 +1300,10 @@ h3.arbtration-heading {
     /* padding: 0; */
     gap: 0;
     justify-content: space-evenly;
+  }
+
+  .flex.flex-wrap.justify-center.lg\:justify-evenly.gap-x-\[16rem\].items-center {
+    gap: 50px;
   }
 
   /* .flex.items-center.justify-center.w-screen.h-screen.overflow-hidden.bg-stone-300.complaint {

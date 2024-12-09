@@ -430,7 +430,7 @@ export const rules = [
                   "a)	whether the hearing shall be conducted in a physical, virtual or in hybrid mode.;",
                   "b)	where the hearing is conducted physically or in a hybrid mode, the place where such hearing will be conducted, the service provider(s)/platform(s) and any other arrangements as may be required for such hearings having regard to the facilities available at SANDHEE with the parties and the arbitrators."
             ],
-            item1:[
+            item1: [
                   "28.4	Where a hearing is adjourned or rendered inefficacious due to the actions of a party to the arbitration, the Arbitral Tribunal may reschedule the hearing at the costs of that party.",
                   "28.5	At any time during the Arbitral Proceeding and before the Award is issued, where the Arbitral Tribunal on its own volition or on a request by a party, considers it necessary to have submissions by the parties on a specific issue in the arbitration, it shall direct the parties by an order in writing to make such submissions.",
             ]
@@ -465,7 +465,7 @@ export const rules = [
                   "31.5 The Arbitral Tribunal may make separate partial Awards on different issues at different times during the proceedings. Where such partial Awards have been issued, a reference to such Awards shall be made in the final Award.",
                   "31.6. The Award shall be delivered to the Registrar, who, upon final settlement of the costs of the arbitration, shall communicate the signed copy of the Award to each of the parties",
                   "31.7 Unless the parties have agreed otherwise, the Arbitral Tribunal may order that simple or compound interest shall be paid by any party on any sum awarded at such rates as the Arbitral Tribunal decides to be appropriate in respect of any period which the Arbitral Tribunal decides to be appropriate ending not later than the date upon which the Award is complied with.",
-                  
+
             ],
 
       },
@@ -474,7 +474,7 @@ export const rules = [
             title: "Rule 32: Consent Award and Additional Award",
             item: [
                   "32.1	In the event of any final settlement of the parties' dispute, the Arbitral Tribunal may decide to make an Award recording the settlement if the parties jointly so request in writing (a Consent Award), provided always that such onsent Award shall contain an express statement on its face that it is an Award made at the parties' joint request and with their consent. A Consent Award need not contain reasons or a determination in relation to the Arbitration Costs or Legal Costs.",
-                  "32.2	If the parties do not jointly request a Consent Award, on written confirmation by the parties to the Registrar that a final settlement has been reached, the Arbitral Tribunal shall make an order of termination of the proceedings subject to payment by the parties of any outstanding costs of the arbitration.",      
+                  "32.2	If the parties do not jointly request a Consent Award, on written confirmation by the parties to the Registrar that a final settlement has been reached, the Arbitral Tribunal shall make an order of termination of the proceedings subject to payment by the parties of any outstanding costs of the arbitration.",
             ],
 
       },
@@ -483,9 +483,9 @@ export const rules = [
             title: "Rule 33: Correction of Awards, Interpretation of Awards and Additional Awards",
             item: [
                   "33.1	Within 30 days of receipt of an Award, a party may, by written notice to the Registrar and the other party, request the Arbitral Tribunal to correct in the Award any error in computation, any clerical or typographical error or any error of a similar nature. If the Arbitral Tribunal considers the request to be justified, it shall make the correction within 30 days of receipt of the request. Any correction, made in the original Award or in a separate memorandum, shall constitute part of the Award.",
-                  "33.2	The Arbitral Tribunal may correct any error of the type referred to in Article 33.1 on its own initiative within 30 days of the date of the Award.", 
+                  "33.2	The Arbitral Tribunal may correct any error of the type referred to in Article 33.1 on its own initiative within 30 days of the date of the Award.",
                   "33.3	Within 30 days of receipt of an Award, a party may, by written notice to the Registrar and the other party, request the Arbitral Tribunal to make an additional Award as to claims presented in the arbitration but not dealt with in the Award. If the Arbitral Tribunal considers the request to be justified, it shall make the additional Award within 45 days of receipt of the request",
-                  "33.4	The Registrar may, if necessary, extend the period of time within which the Arbitral Tribunal shall make a correction of an Award or an additional Award under this Article."     
+                  "33.4	The Registrar may, if necessary, extend the period of time within which the Arbitral Tribunal shall make a correction of an Award or an additional Award under this Article."
             ],
 
       },
@@ -528,15 +528,15 @@ export const rules = [
                   "37.1	Unless otherwise agreed by the parties, the Arbitral Tribunal shall specify in the Award the total amount of the costs of the arbitration and the apportionment of the costs of the arbitration between or among the parties.",
                   "37.2	In making its decisions as to apportionment of the costs of the arbitration between or among the parties, the Arbitral Tribunal shall take into account such circumstances as it considers relevant, including the extent to which each party has conducted the arbitration in an expeditious and cost-effective manner.",
                   "37.3	The term “costs of the arbitration” includes:",
-             
+
             ],
-            content:[
+            content: [
                   "the Arbitral Tribunal’s fees and expenses and the Emergency Arbitrator’s fees and expenses, where applicable determined in accordance with Schedule 2C;",
                   "SANDHEE’s Administrative Fees applicable to the aggregate of claims and counterclaims, charges for the use of SANDHEE’s facilities and support services, and out of pocket expenses calculated in accordance with Schedule 2B; and",
                   "The costs of any expert appointed by the Arbitral Tribunal and of any other assistance reasonably required by the Arbitral Tribunal including the fees and expenses of a Tribunal Secretary."
-                  
+
             ],
-            item1:[
+            item1: [
                   "37.4	The Arbitral Tribunal shall have the authority to order in its Award that all or a part of the legal or other costs of a party be paid by another party."
             ]
 
@@ -546,15 +546,15 @@ export const rules = [
             title: "Rule 38: General Rules",
             item: [
                   "38.1 For all matters not expressly provided in these Rules or the arbitration agreement, SANDHEE, the Arbitral Tribunal, any Tribunal Secretary and each of the parties shall act at all times in good faith, respecting the spirit of these Rules and the arbitration agreement, and shall make every reasonable effort to ensure that any Award is legally recognised and enforceable at the arbitral seat.",
-             
+
             ],
-            content:[
+            content: [
                   "the Arbitral Tribunal’s fees and expenses and the Emergency Arbitrator’s fees and expenses, where applicable determined in accordance with Schedule 2C;",
                   "SANDHEE’s Administrative Fees applicable to the aggregate of claims and counterclaims, charges for the use of SANDHEE’s facilities and support services, and out of pocket expenses calculated in accordance with Schedule 2B; and",
                   "The costs of any expert appointed by the Arbitral Tribunal and of any other assistance reasonably required by the Arbitral Tribunal including the fees and expenses of a Tribunal Secretary."
-                  
+
             ],
-            item1:[
+            item1: [
                   "37.4	The Arbitral Tribunal shall have the authority to order in its Award that all or a part of the legal or other costs of a party be paid by another party."
             ]
 

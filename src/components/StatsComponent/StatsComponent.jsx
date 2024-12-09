@@ -5,12 +5,12 @@ const StatsComponent = () => {
             { number: 200, label: 'Employees' },
             { number: 340, label: 'Programs' },
             { number: 320, label: 'Cases' },
-            { number: 192, label: 'Donations' },
+            // { number: 192, label: 'Donations' },
       ];
 
       return (
             <div className="w-full lg:h-[183px] flex flex-wrap lg:flex-nowrap justify-evenly items-center bg-[#1B314E] px-4 py-6 lg:py-0">
-                  <div className="flex flex-wrap justify-center lg:justify-evenly gap-x-[5.1rem]  items-center">
+                  <div className="flex flex-wrap justify-center lg:justify-evenly gap-x-[16rem]  items-center">
                         {stats.map((stat, index) => (
                               <div
                                     key={index}

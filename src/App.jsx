@@ -9,8 +9,8 @@ import Layout from './components/Layout'; // Import Layout component
 import Location from './components/Location/Location';
 import ErrorPage from './components/Error/ErrorPage';
 import ArbitrationRules from './components/ArbitrationRules/ArbitrationRules';
-import InquiryForm from './components/InquiryForm/InquiryForm';
 import Contact from './components/Contact/Contact';
+import MediationRules from './components/MediationRules/MediationRules';
 
 // Create the router using createBrowserRouter
 const router = createBrowserRouter([
@@ -29,15 +29,23 @@ const router = createBrowserRouter([
         path: "arbitration/arbitration-rules",
         element: <ArbitrationRules />,
       },
-      { path: "mediation", element: <Mediation /> },
+      { path: "mediation", element: <HomePages /> },
+      {
+        path: "mediation/whatIsMediation",
+        element: <Mediation />,
+      },
+      {
+        path: "mediation/mediation-rules",
+        element: <MediationRules />,
+      },
       { path: "conciliation", element: <Conciliation /> },
       { path: "location", element: <Location /> },
       { path: "contact", element: <Contact /> },
     ],
   },
   {
-    path: "*", 
-    element: <ErrorPage /> 
+    path: "*",
+    element: <ErrorPage />
   },
 ]);
 

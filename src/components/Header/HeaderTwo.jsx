@@ -14,7 +14,14 @@ const navLinks = [
                   { name: "Domestic Rules", path: "arbitration/arbitration-rules" },
             ],
       },
-      { name: "MEDIATION", path: "/mediation" },
+      {
+            name: "MEDIATION", path: "/mediation",
+            children: [
+                  { name: "What is Mediation", path: "/mediation/whatIsMediation" },
+                  { name: "Mediation Rules", path: "#" },
+            ],
+
+      },
       { name: "CONCILIATION", path: "/conciliation" },
       { name: "LOCATION", path: "/location" },
       { name: "CONTACT", path: "/contact" },
@@ -38,7 +45,8 @@ const HeaderTwo = ({ className }) => {
       function handleNavColor(path) {
             const blackPaths = new Set([
                   "/contact",
-                  "/arbitration/arbitration-rules"
+                  "/arbitration/arbitration-rules",
+                  "/mediation/mediation-rules"
             ]);
 
             if (blackPaths.has(path)) {
@@ -122,7 +130,7 @@ const HeaderTwo = ({ className }) => {
 
                                                 {/* Dropdown Menu */}
                                                 {children && dropdownOpen === name && (
-                                                      <ul className="fixed z-10   md:absolute md:left-0 mt-2 bg-[#1b1c2e] text-[#fff]  p-4 ">
+                                                      <ul className="fixed z-10  w-[240px]   md:absolute md:left-0  bg-[#1b1c2e] text-[#fff]  p-4 ">
                                                             {children.map(({ name: childName, path: childPath }) => (
                                                                   <li
                                                                         key={childPath}
