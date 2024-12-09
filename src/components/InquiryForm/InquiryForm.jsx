@@ -14,53 +14,53 @@ const InquiryForm = () => {
             setFormData({ ...formData, [name]: value });
       };
 
-      const handleSubmit = (e) => {  
-            e.preventDefault();  
-        
-            const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;  
-            const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;  
-            const userId = import.meta.env.VITE_EMAILJS_USER_ID;  
-        
-            if (!serviceId || !templateId || !userId) {  
-                console.warn("Missing environment variables. Please check your .env file.");  
-                alert("Configuration error. Please try again later.");  
-                return;  
-            }  
-        
-            const isValidEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(formData.email);  
-            if (!isValidEmail) {  
-                alert("Please enter a valid email address.");  
-                return;  
-            }  
-        
-            console.log("Sending email to:", "info@sandhee.com");  
-            console.log("Form Data:", formData);  
-        
-            emailjs  
-                .send(  
-                    serviceId,  
-                    templateId,  
-                    {  
-                        to_email: "info@sandhee.com",  
-                        full_name: formData.fullName,   
-                        from_email: formData.email,  
-                        reply_to: formData.email,   
-                        message: formData.message,  
-                    },  
-                    userId  
-                )  
-                .then(  
-                    () => {  
-                        alert("Email sent successfully!");  
-                        setFormData({ fullName: "", email: "", business: "", message: "" });  
-                    },  
-                    (error) => {  
-                        console.error("Email sending failed:", error);  
-                        alert("Failed to send the email. Please try again.");  
-                    }  
-                );  
-        };
-        
+      const handleSubmit = (e) => {
+            e.preventDefault();
+
+            const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+            const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+            const userId = import.meta.env.VITE_EMAILJS_USER_ID;
+
+            if (!serviceId || !templateId || !userId) {
+                  console.warn("Missing environment variables. Please check your .env file.");
+                  alert("Configuration error. Please try again later.");
+                  return;
+            }
+
+            const isValidEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(formData.email);
+            if (!isValidEmail) {
+                  alert("Please enter a valid email address.");
+                  return;
+            }
+
+            console.log("Sending email to:", "gauraav@sandhee.com");
+            console.log("Form Data:", formData);
+
+            emailjs
+                  .send(
+                        serviceId,
+                        templateId,
+                        {
+                              to_email: "gauraav@sandhee.com",
+                              full_name: formData.fullName,
+                              from_email: formData.email,
+                              reply_to: formData.email,
+                              message: formData.message,
+                        },
+                        userId
+                  )
+                  .then(
+                        () => {
+                              alert("Email sent successfully!");
+                              setFormData({ fullName: "", email: "", business: "", message: "" });
+                        },
+                        (error) => {
+                              console.error("Email sending failed:", error);
+                              alert("Failed to send the email. Please try again.");
+                        }
+                  );
+      };
+
       return (
             <div className={`text-center  inquiry-bg py-10 px-6 lg:px-16`}>
                   <div className="mb-[222px] mt-[127px]">
