@@ -19,7 +19,7 @@ const FooterTwo = ({ className }) => {
                               <div className="flex gap-2 ml-[1rem] ">
                                     <FaMapLocationDot className="text-green-500 text-2xl  " />
                                     <span className="text-white font-[400] text-[14px] sm:text-[16px] leading-[24px] sm:leading-[32px]">
-                                          293, Second Floor Westend <br className='block sm:hidden' /> Marg New Delhi
+                                          293, Second Floor Westend <br className='block sm:hidden' /> Marg New Delhi - 110030
                                     </span>
                               </div>
                               <div className="flex  items-center">

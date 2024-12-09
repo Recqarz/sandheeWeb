@@ -119,12 +119,13 @@ const InquiryForm = () => {
                                           name="message"
                                           value={formData.message}
                                           onChange={handleChange}
-                                          className="w-full p-3 border-b border-[#BF9874] bg-transparent focus:outline-none focus:ring-0 focus:border-[#667C99] text-[#667C99] text-[20px] font-[500]"
-                                          rows="4"
+                                          className="w-full p-3 border-b border-[#BF9874] placeholder:text-[#667C99] placeholder:relative placeholder:top-[-18px] bg-transparent focus:outline-none focus:ring-0 focus:border-[#667C99] text-[#667C99] text-[20px] font-[500] leading-[1.5] box-border"
+                                          rows="4" // Ensures the textarea has a proper height
                                           placeholder="Your message"
                                           required
                                           aria-label="Your Message"
-                                    ></textarea>
+                                    />
+
                               </div>
 
                               <button

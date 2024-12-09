@@ -29,15 +29,15 @@ const router = createBrowserRouter([
         path: "arbitration/arbitration-rules",
         element: <ArbitrationRules />,
       },
-      { path: "mediation", element: <HomePages /> },
-      {
-        path: "mediation/whatIsMediation",
-        element: <Mediation />,
-      },
-      {
-        path: "mediation/mediation-rules",
-        element: <MediationRules />,
-      },
+      { path: "mediation", element: <Mediation /> },
+      // {
+      //   path: "mediation/whatIsMediation",
+      //   element: <Mediation />,
+      // },
+      // {
+      //   path: "mediation/mediation-rules",
+      //   element: <MediationRules />,
+      // },
       { path: "conciliation", element: <Conciliation /> },
       { path: "location", element: <Location /> },
       { path: "contact", element: <Contact /> },

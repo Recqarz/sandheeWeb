@@ -16,10 +16,10 @@ const navLinks = [
       },
       {
             name: "MEDIATION", path: "/mediation",
-            children: [
-                  { name: "What is Mediation", path: "/mediation/whatIsMediation" },
-                  { name: "Mediation Rules", path: "#" },
-            ],
+            // children: [
+            //       { name: "What is Mediation", path: "/mediation/whatIsMediation" },
+            //       { name: "Mediation Rules", path: "#" },
+            // ],
 
       },
       { name: "CONCILIATION", path: "/conciliation" },
