@@ -13,15 +13,7 @@ const UserDetailsForm = () => {
             gst: false,
       });
 
-      const [errors, setErrors] = useState({
-            name: "",
-            email: "",
-            phone: "",
-            pincode: "",
-            city: "",
-            state: "",
-            address: "",
-      });
+      const [errors, setErrors] = useState({});
 
       const validateField = (name, value) => {
             let errorMessage = "";
@@ -54,8 +46,8 @@ const UserDetailsForm = () => {
 
       const handleSubmit = (e) => {
             e.preventDefault();
-
             let hasError = false;
+
             Object.keys(formData).forEach((key) => {
                   validateField(key, formData[key]);
                   if (typeof formData[key] === "string" && !formData[key].trim() && key !== "gst") {
@@ -66,6 +58,7 @@ const UserDetailsForm = () => {
             if (hasError) return;
 
             console.log(formData);
+            alert("Form submitted successfully!");
 
             setFormData({
                   name: "",
@@ -76,105 +69,47 @@ const UserDetailsForm = () => {
                   state: "",
                   address: "",
                   gst: false,
-
-
             });
-            alert("Form submitted successfully!");
 
             setErrors({});
       };
 
+      const renderInput = (label, name, type = "text", placeholder) => (
+            <div className="mb-4">
+                  <Label htmlFor={name}>{label}</Label>
+                  <Input
+                        type={type}
+                        name={name}
+                        value={formData[name]}
+                        onChange={handleChange}
+                        placeholder={placeholder}
+                        className="placeholder:text-[14px] md:placeholder:text-[18px]"
+                  />
+                  {errors[name] && <ErrorMessage>{errors[name]}</ErrorMessage>}
+            </div>
+      );
+
       return (
-            <div className="flex w-screen h-screen items-center justify-center overflow-hidden bg-stone-300">
-                  <div className="bg-[#0E1926] max-w-[640px] w-full h-full 2xl:max-w-[640px] 2xl:h-[1080px] overflow-hidden px-4 py-4 2xl:py-20 sm:px-6 md:px-10">
+            <div className="flex md:bg-[#fff]  md:pt-0 w-screen md:h-screen items-center justify-center overflow-hidden">
+                  <div className="bg-[#0E1926] max-w-[640px] w-full h-full 2xl:max-w-[640px] 2xl:h-[1080px] overflow-hidden px-4 py-4 2xl:py-20 sm:px-6 md:px-10 md:flex md:flex-col md:items-center md:justify-center md:gap-[55px]">
                         <div className="flex items-start">
                               <h2 className="text-[20px] leading-[24.2px] font-[600] text-[#FFFFFF]">Step 1 :</h2>
                               <h3 className="text-[20px] leading-[24.2px] font-[600] font-[Inter] ml-[60px] 2xl:ml-[80px]">Your Details</h3>
                         </div>
                         <form className="mt-4" onSubmit={handleSubmit}>
-                              <div className="mb-4">
-                                    <Label htmlFor="name">Name*</Label>
-                                    <Input
-                                          type="text"
-                                          name="name"
-                                          value={formData.name}
-                                          onChange={handleChange}
-                                          placeholder="Enter your name"
-                                    />
-                                    {errors.name && <ErrorMessage>{errors.name}</ErrorMessage>}
-                              </div>
-
-                              <div className="mb-4">
-                                    <Label htmlFor="email">Email Address*</Label>
-                                    <Input
-                                          type="email"
-                                          name="email"
-                                          value={formData.email}
-                                          onChange={handleChange}
-                                          placeholder="Enter your email"
-                                    />
-                                    {errors.email && <ErrorMessage>{errors.email}</ErrorMessage>}
-                              </div>
-
-                              <div className="mb-4">
-                                    <Label htmlFor="phone">Phone Number*</Label>
-                                    <Input
-                                          type="tel"
-                                          name="phone"
-                                          value={formData.phone}
-                                          onChange={handleChange}
-                                          placeholder="Enter your phone number"
-                                    />
-                                    {errors.phone && <ErrorMessage>{errors.phone}</ErrorMessage>}
-                              </div>
-
-                              <div className="mb-4 flex flex-col sm:flex-row sm:space-x-4">
+                              {renderInput("Name*", "name", "text", "Enter your name")}
+                              {renderInput("Email Address*", "email", "email", "Enter your email")}
+                              {renderInput("Phone Number*", "phone", "tel", "Enter your phone number")}
+                              <div className="mb-2 flex flex-col sm:flex-row sm:space-x-4">
                                     <div className="w-full sm:w-[48%]">
-                                          <Label htmlFor="pincode">Pincode*</Label>
-                                          <Input
-                                                type="text"
-                                                name="pincode"
-                                                value={formData.pincode}
-                                                onChange={handleChange}
-                                                placeholder="Enter your pincode"
-                                          />
-                                          {errors.pincode && <ErrorMessage>{errors.pincode}</ErrorMessage>}
+                                          {renderInput("Pincode*", "pincode", "text", "Enter your pincode")}
                                     </div>
                                     <div className="w-full sm:w-[48%]">
-                                          <Label htmlFor="city">City*</Label>
-                                          <Input
-                                                type="text"
-                                                name="city"
-                                                value={formData.city}
-                                                onChange={handleChange}
-                                                placeholder="Enter your city"
-                                          />
-                                          {errors.city && <ErrorMessage>{errors.city}</ErrorMessage>}
+                                          {renderInput("City*", "city", "text", "Enter your city")}
                                     </div>
                               </div>
-
-                              <div className="mb-4">
-                                    <Label htmlFor="state">State*</Label>
-                                    <Input
-                                          type="text"
-                                          name="state"
-                                          value={formData.state}
-                                          onChange={handleChange}
-                                          placeholder="Enter your state"
-                                    />
-                                    {errors.state && <ErrorMessage>{errors.state}</ErrorMessage>}
-                              </div>
-
-                              <div className="mb-4">
-                                    <Label htmlFor="address">Address</Label>
-                                    <Input
-                                          name="address"
-                                          value={formData.address}
-                                          onChange={handleChange}
-                                          placeholder="Enter your address"
-                                    />
-                              </div>
-
+                              {renderInput("State*", "state", "text", "Enter your state")}
+                              {renderInput("Address", "address", "text", "Enter your address")}
                               <div className="mb-4 flex justify-center udf-bttn">
                                     <Checkbox
                                           type="checkbox"
@@ -186,7 +121,6 @@ const UserDetailsForm = () => {
                                           Do You Have GST?
                                     </Label>
                               </div>
-
                               <div className="flex justify-end">
                                     <Button type="submit">Next</Button>
                               </div>
@@ -208,20 +142,23 @@ const Label = styled.label`
   text-align: left;
   color: #ffffff;
   margin-bottom: 10px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    line-height: 12px;
+    color: gray;
+  }
 `;
 
 const Input = styled.input`
   width: 100%;
-  padding: 2px;
+  padding: 1rem 1.5rem;
   border-radius: 17px;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
   background-color: #fff;
   color: black;
   ::placeholder {
     color: #333;
+    font-size: 1rem;
   }
   outline: none;
   font-family: "Inter", sans-serif;
@@ -231,6 +168,13 @@ const Input = styled.input`
   &:focus {
     outline: none;
     ring: 2px solid blue;
+  }
+
+  @media (max-width: 768px) {
+    padding: 12px;
+    ::placeholder {
+      font-size: 12px;
+    }
   }
 `;
 
@@ -249,9 +193,11 @@ const Button = styled.button`
   line-height: 24.2px;
   text-align: center;
 
-  @media only screen and (min-width: 320px) and (max-width: 768px) {
-    height: 60px;
-    width: 150px;
+  @media (max-width: 768px) {
+    height: 48px;
+    width: 100px;
+    font-size: 16px;
+    margin: auto;
   }
 `;
 
