@@ -1,37 +1,38 @@
 import React, { useState } from 'react';
 import ErrorImage from '../../assets/error1.avif';
-const ErrorPage = () => {
-  const [showFullPage, setShowFullPage] = useState(false);
 
-  const handleAreaClick = () => {
-    setShowFullPage(true);
+const ErrorPage = () => {
+  const handleWindowClick = (e) => {
+    if (e.target.tagName !== 'IMG') {
+      window.location.href = '/';
+    }
+  };
+
+  const handleImageClick = () => {
+    window.location.href = '/';
   };
 
   return (
     <div
-      className="flex items-center justify-center h-screen"
-      onClick={handleAreaClick}
+      className="relative flex items-center justify-center h-screen"
+      onClick={handleWindowClick}
     >
-      <div
-        className="w-[1400px] h-[800px] text-center flex items-center justify-center"
-      >
-        {!showFullPage ? (
-          <img
-            src={ErrorImage}
-            alt="Error"
-            className="w-full h-full mx-auto object-contain cursor-pointer"
-            onClick={handleAreaClick}
-          />
-        ) : (
-          <>
-            <button
-              onClick={() => window.location.href = '/'}
-              className="2xl:w-[300px] 2xl:h-[100px] text-[24px] font-[600] bg-[#BF9874] text-[#000] py-2 px-6 rounded-[17px] transition duration-200"
-            >
-              Go to Home
-            </button>
-          </>
-        )}
+      <div className="absolute top-10 w-full text-center">
+        <div className="marquee overflow-hidden whitespace-nowrap">
+          <marquee behavior="" direction="">
+            <span className="text-[24px]  font-[600] text-[#000]">
+              Routing Path <strong className='bg-red-700 px-3 text-white' >Incorrect</strong> - Click Anywhere to <strong className='bg-green-600 px-3 text-white'>Return</strong> Home 😔😔
+            </span>
+          </marquee>
+        </div>
+      </div>
+      <div className="w-[1400px] h-[800px] text-center relative">
+        <img
+          src={ErrorImage}
+          alt="Error"
+          className="w-full h-full mx-auto object-contain"
+          onClick={handleImageClick}
+        />
       </div>
     </div>
   );
