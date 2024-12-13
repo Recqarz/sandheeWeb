@@ -1,5 +1,5 @@
 import React from "react";
-import aboutImage from "/public/about/about.png";
+import aboutImage from "../../assets/about/about.png";
 import DirectionalIndicator from "../DirectionalIndicator/DirectionalIndicator";
 
 const About = () => {

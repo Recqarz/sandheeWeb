@@ -5,17 +5,17 @@ import { LuArrowUpRight } from 'react-icons/lu';
 const expertiseData = [
       {
             title: 'Arbitration',
-            imageUrl: '/expertise/e1.png',  // Use relative path without 'public' for images
+            imageUrl: '../../src/assets/expertise/e1.png',  // Use relative path without 'public' for images
             Url: "/arbitration/whatIsArbiration"
       },
       {
             title: 'Meditation',
-            imageUrl: '/expertise/e2.png',
+            imageUrl: '../../src/assets/expertise/e2.png',
             Url: "/mediation"
       },
       {
             title: 'Conciliation',
-            imageUrl: '/expertise/e3.png',
+            imageUrl: '../../src/assets/expertise/e3.png',
             Url: "/Conciliation"
       },
 ];

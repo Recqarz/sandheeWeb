@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { FiMenu, FiX, FiChevronDown, FiChevronRight } from "react-icons/fi";
-import Image from "/public/logo.png";
+import Image from "../../assets/logo.png";
 
 const navLinks = [
   { name: "HOME", path: "/" },

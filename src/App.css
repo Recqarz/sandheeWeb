@@ -68,7 +68,7 @@ a {
   justify-content: center;
   text-align: center;
   min-height: 100vh;
-  background: url("./assets/img/3.png") no-repeat center/cover;
+  background: url("../../src/assets/img/3.png") no-repeat center/cover;
 }
 
 .bg_textt {
@@ -107,7 +107,7 @@ footer {
   left: -90px;
   width: 389px;
   height: 389px;
-  background-image: url(/public/side-about-2.png);
+  background-image: url(../../src/assets/side-about-2.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -121,7 +121,7 @@ footer {
   bottom: 0;
   width: 389px;
   height: 389px;
-  background-image: url(/public/sidebg-about.png);
+  background-image: url(../../src/assets/sidebg-about.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -138,7 +138,7 @@ footer {
   left: -90px;
   width: 337px;
   height: 246px;
-  background-image: url(/public/sr-1.png);
+  background-image: url(../../src/assets/sr-1.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -151,7 +151,7 @@ footer {
   right: 0px;
   width: 337px;
   height: 246px;
-  background-image: url(/public/sr-2.png);
+  background-image: url(../../src/assets/sr-2.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -159,21 +159,21 @@ footer {
 
 .bgg__Arbtraction {
   position: relative;
-  background-image: url(/public/bs-1.png);
+  background-image: url(../../src/assets/bs-1.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .bgg__MEDIATION {
-  background-image: url(/public/bs-2.png);
+  background-image: url(../../src/assets/bs-2.png);
   background-size: auto;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .bgg__CONCILIATION {
-  background-image: url(/public/bs-3.png);
+  background-image: url(../../src/assets/bs-3.png);
   background-size: auto;
   background-position: center;
   background-repeat: no-repeat;
@@ -190,7 +190,7 @@ footer {
   left: -90px;
   width: 389px;
   height: 389px;
-  background-image: url(/public/side-about-2.png);
+  background-image: url(../../src/assets/side-about-2.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -203,7 +203,7 @@ footer {
   right: -179px;
   width: 389px;
   height: 389px;
-  background-image: url(/public/side-about-2.png);
+  background-image: url(../../src/assets/side-about-2.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -237,7 +237,7 @@ footer {
   right: -12rem;
   width: 193px;
   height: inherit;
-  background-image: url(/public/about/about-icon.png);
+  background-image: url(../../src/assets/about/about-icon.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -263,7 +263,7 @@ h2.expertise::before {
   width: 100px;
   height: -webkit-fill-available;
   aspect-ratio: 1;
-  background-image: url(/public/expertise/ec1.png);
+  background-image: url(../../src/assets/expertise/ec1.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -277,7 +277,7 @@ h2.expertise::after {
   width: 100px;
   height: -webkit-fill-available;
   aspect-ratio: 1;
-  background-image: url(/public/expertise/ec2.png);
+  background-image: url(../../src/assets/expertise/ec2.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -327,7 +327,7 @@ p.text-\[29px\].text-\[\#FFFFFF\].leading-\[43\.5px\].font-\[300\] {
   left: 116px;
   width: 100%;
   height: 139px;
-  background-image: url(/public/expertise/stats.png);
+  background-image: url(../../src/assets/expertise/stats.png);
   background-repeat: no-repeat;
   background-size: contain;
   /* Ensure the image is scaled correctly */
@@ -335,7 +335,7 @@ p.text-\[29px\].text-\[\#FFFFFF\].leading-\[43\.5px\].font-\[300\] {
 
 /* equiry css  */
 .inquiry-bg {
-  background-image: url("/public/expertise/bginquiry.png");
+  background-image: url("../../src/assets/expertise/bginquiry.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -358,7 +358,7 @@ h2.inquiry--text::before {
   width: 100px;
   height: -webkit-fill-available;
   aspect-ratio: 1;
-  background-image: url(/public/expertise/ec1.png);
+  background-image: url(../../src/assets/expertise/ec1.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -372,7 +372,7 @@ h2.inquiry--text::after {
   width: 100px;
   height: -webkit-fill-available;
   aspect-ratio: 1;
-  background-image: url(/public/expertise/ec2.png);
+  background-image: url(../../src/assets/expertise/ec2.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -458,21 +458,21 @@ h3.arbtration-heading {
 /* w-full max-w-[600px] h-[155px] rounded-[45px] text-center text-[2rem] md:text-[3rem] font-medium bg-[#CB935D] text-[#191A23] border-b-4 border-black shadow-lg */
 
 .arbirato_bg {
-  background-image: url(/public/arb.png);
+  background-image: url(../../src/assets/arb.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .conciliatio_bg {
-  background-image: url(/public/concillbg.png);
+  background-image: url(../../src/assets/concillbg.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .mediation_bg {
-  background-image: url(/public/madiatttbg.png);
+  background-image: url(../../src/assets/madiatttbg.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -489,13 +489,14 @@ h3.arbtration-heading {
   right: -85px;
   width: 337px;
   height: 246px;
-  background-image: url(/public/arbsidebg.png);
+  background-image: url(../../src/assets/arbsidebg.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.bg-conillll {}
+.bg-conillll {
+}
 
 .bullet-list {
   list-style-type: disc;
@@ -780,8 +781,6 @@ h3.arbtration-heading {
     display: none;
   }
 }
-
-
 
 @media only screen and (min-width: 320px) and (max-width: 768px) {
   header.absolute.top-0.left-0.w-full.z-50.py-4 {

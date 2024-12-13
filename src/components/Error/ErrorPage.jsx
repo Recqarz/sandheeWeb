@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
-import ErrorImage from '/public/error1.avif';
+import ErrorImage from '../../assets/error1.avif';
 const ErrorPage = () => {
   const [showFullPage, setShowFullPage] = useState(false);
 
   const handleAreaClick = () => {
-    setShowFullPage(true); 
+    setShowFullPage(true);
   };
 
   return (
-    <div 
-      className="flex items-center justify-center h-screen" 
-      onClick={handleAreaClick}  
+    <div
+      className="flex items-center justify-center h-screen"
+      onClick={handleAreaClick}
     >
-      <div 
+      <div
         className="w-[1400px] h-[800px] text-center flex items-center justify-center"
       >
         {!showFullPage ? (
@@ -20,7 +20,7 @@ const ErrorPage = () => {
             src={ErrorImage}
             alt="Error"
             className="w-full h-full mx-auto object-contain cursor-pointer"
-            onClick={handleAreaClick}  
+            onClick={handleAreaClick}
           />
         ) : (
           <>

@@ -8,7 +8,7 @@ const HeroSection = () => {
                   className="flex items-center flex-col justify-center w-full 
                    bg-cover bg-center"
                   style={{
-                        backgroundImage: "url('/bg-1.png')",
+                        backgroundImage: "url('../../src/assets/bg-1.png')",
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                         backgroundRepeat: 'no-repeat',
