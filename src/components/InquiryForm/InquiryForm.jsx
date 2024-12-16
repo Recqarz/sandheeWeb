@@ -122,10 +122,12 @@ const InquiryForm = () => {
                               ))}
                               <button
                                     type="submit"
-                                    className=" w-[150px] md:w-[281px] lg:h-[49px] border-[1px] border-[#001025] bg-transparent text-[16px] leading-[17.41px] text-[#001025] font-[600] py-3 px-6 transition duration-300 mt-6"
+                                    className="w-[150px] md:w-[281px] lg:h-[49px] border-[1px] border-[#001025] bg-transparent text-[16px] leading-[17.41px] text-[#001025] font-[600] py-3 px-6 
+             hover:bg-[#001025] hover:text-white transition duration-300 ease-in-out mt-6"
                               >
                                     Submit
                               </button>
+
                         </form>
 
                   </div>

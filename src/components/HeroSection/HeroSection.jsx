@@ -32,12 +32,14 @@ const HeroSection = () => {
                         </p>
                         <a
                               href="https://www.odr.sandhee.com/"
-                              className="bg-[#CB935D] w-[231px] h-[60px] text-white font-[400] text-[24px] leading-[36px] flex items-center justify-center rounded-none"
+                              className="bg-[#CB935D] w-[231px] h-[60px] text-white font-[400] text-[24px] leading-[36px] flex items-center justify-center rounded-none
+             hover:bg-[#B47F4A] hover:shadow-lg transition-all duration-300 ease-in-out"
                               target="_blank"
                               rel="noopener noreferrer"
                         >
                               Enroll Now
                         </a>
+
 
                   </div>
             </div>
