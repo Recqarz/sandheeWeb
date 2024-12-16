@@ -54,7 +54,7 @@ const Dropdown = ({ title, item, content, item1, content1, item2, content2, item
   const safeItem3 = Array.isArray(item3) ? item3 : [item3];
 
   return (
-    <div className="border mb-3 rounded-md shadow-sm">
+    <div className="border mb-3 rounded-md shadow-sm border-l-2   border-l-[#bf9874] ">
       <div
         className="flex justify-between items-center px-4 py-3 cursor-pointer bg-gray-100 hover:bg-gray-200"
         onClick={() => setIsOpen(!isOpen)}
