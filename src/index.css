@@ -2,10 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+@media only screen and (min-width: 877px) and (max-width: 877.77px) {
+  .max-w-\[1782px\].mx-auto.flex.justify-between.items-center {
+    gap: 0rem;
+    justify-content: space-around;
+  }
+
+  .lg\:w-\[110rem\].h-\[30rem\].sm\:h-\[50rem\].absolute.bottom-\[40px\] {
+    width: 50rem;
+  }
+
+  .inquiry--text::after {
+    display: none;
+  }
+
+  .inquiry--text::before {
+    display: none;
+  }
+}
+
 @media only screen and (min-width: 768px) and (max-width: 840px) {
   .max-w-\[1782px\].mx-auto.flex.justify-between.items-center {
     gap: 0rem;
     justify-content: space-around;
+  }
+
+  .lg\:w-\[110rem\].h-\[30rem\].sm\:h-\[50rem\].absolute.bottom-\[40px\] {
+    width: 30rem;
+    height: 15rem;
+  }
+
+  .mt-\[127px\] {
+    margin-top: 231px !important;
   }
 
   ul.flex.flex-col.md\:flex-row.gap-\[40px\].items-center.md\:gap-\[24px\].p-8.md\:p-0 {
@@ -237,6 +265,11 @@
     justify-content: space-around;
   }
 
+  .lg\:w-\[110rem\].h-\[30rem\].sm\:h-\[50rem\].absolute.bottom-\[40px\] {
+    width: 70rem;
+    height: 30rem;
+  }
+
   /* header.absolute.top-0.left-0.w-full.z-50.py-4 {
     overflow: hidden;
   } */
@@ -394,6 +427,10 @@
   .max-w-\[1782px\].mx-auto.flex.justify-between.items-center {
     gap: 17rem;
     justify-content: space-around;
+  }
+
+  .lg\:w-\[110rem\].h-\[30rem\].sm\:h-\[50rem\].absolute.bottom-\[40px\] {
+    height: 15rem;
   }
 
   /* header.absolute.top-0.left-0.w-full.z-50.py-4 {
@@ -555,6 +592,10 @@
   .max-w-\[1782px\].mx-auto.flex.justify-between.items-center {
     gap: 17rem;
     justify-content: space-around;
+  }
+
+  .mt-\[127px\] {
+    margin-top: 231px !important;
   }
 
   /* header.absolute.top-0.left-0.w-full.z-50.py-4 {
@@ -926,6 +967,14 @@
     justify-content: space-around;
   }
 
+  .lg\:w-\[110rem\].h-\[30rem\].sm\:h-\[50rem\].absolute.bottom-\[40px\] {
+    width: 50rem;
+    height: 20rem;
+  }
+  .mt-\[127px\] {
+    margin-top: 231px !important;
+  }
+
   /* header.absolute.top-0.left-0.w-full.z-50.py-4 {
     overflow: hidden;
   } */
@@ -1132,6 +1181,10 @@
     gap: 12rem;
   }
 
+  .lg\:w-\[110rem\].h-\[30rem\].sm\:h-\[50rem\].absolute.bottom-\[40px\] {
+    width: 70rem;
+    height: 30rem;
+  }
   .md\:w-1\/2.\32 xl\:mt-12.about__conttts {
     padding-right: 300px;
   }

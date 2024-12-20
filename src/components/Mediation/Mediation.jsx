@@ -10,7 +10,7 @@ const Mediation = () => {
                               </div>
 
                               <div className="mt-10">
-                                    <p className="arbtration-text mb-5"> 
+                                    <p className="arbtration-text mb-5">
                                           Mediation typically involves the following stages:
                                     </p>
                               </div>
