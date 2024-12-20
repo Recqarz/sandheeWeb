@@ -64,7 +64,7 @@ const Header = ({ className }) => {
           className={`fixed top-0 left-0 w-full h-full md:relative md:h-auto md:w-auto bg-black bg-opacity-90 md:bg-transparent flex flex-col md:flex-row items-center justify-center md:justify-end transition-transform duration-300 z-40 ${isMobileMenuOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
             }`}
         >
-          <ul className="flex flex-col md:flex-row gap-[40px] items-center justify-center md:gap-[24px] p-8 md:p-0">
+          <ul className="flex flex-col md:flex-row gap-[40px] items-center justify-center md:gap-[18px] lg:gap-[24px] p-8 md:p-0">
             {navLinks.map(({ name, path, children }) => (
               <li
                 key={path}
@@ -79,7 +79,7 @@ const Header = ({ className }) => {
                   <NavLink
                     to={path}
                     className={({ isActive }) =>
-                      `font-medium nav__texttt text-[14px] md:text-[12px] 2xl:text-[18px] sm:text-[12px] leading-[28px] tracking-[1px] ${isActive
+                      `font-medium nav__texttt text-[14px]  md:text-[8px] lg:text-[12px] 2xl:text-[18px] sm:text-[12px] leading-[28px] tracking-[1px] ${isActive
                         ? "text-white underline underline-offset-4 decoration-2"
                         : "text-gray-500"
                       } hover:text-white transition duration-300`

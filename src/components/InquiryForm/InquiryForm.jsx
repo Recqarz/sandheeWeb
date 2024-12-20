@@ -81,7 +81,7 @@ const InquiryForm = () => {
                   <div className="mb-[222px] mt-[127px]">
                         <h2 className="inquiry--text">MAKE AN INQUIRY</h2>
                         <p className="vision-textt vmb__text">WE WOULD LOVE TO WORK WITH YOU</p>
-                        <form className=" w-[320px] md:w-[950px] mx-auto" onSubmit={handleSubmit}>
+                        <form className=" w-[320px] lg:w-[950px] mx-auto" onSubmit={handleSubmit}>
                               {['Name', 'Email', 'Phone', 'Company', 'Message'].map((field, index) => (
                                     <div className="flex flex-row items-center mt-4" key={index}>
                                           <label

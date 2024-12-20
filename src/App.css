@@ -587,7 +587,7 @@ h3.arbtration-heading {
 
   p.vision-textt {
     font-size: 12px;
-    line-height: 24px;
+    line-height: 34px;
     margin-bottom: 20px;
   }
 
@@ -1231,11 +1231,11 @@ h3.arbtration-heading {
   }
 
   h2.inquiry--text::before {
-    left: 28rem;
+    left: 24%;
   }
 
   h2.inquiry--text::after {
-    right: 28rem;
+    right: 24%;
   }
 
   p.vision-textt.vmb__text {

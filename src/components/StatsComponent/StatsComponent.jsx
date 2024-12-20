@@ -10,7 +10,7 @@ const StatsComponent = () => {
 
       return (
             <div className="w-full lg:h-[183px] flex flex-wrap lg:flex-nowrap justify-evenly items-center bg-[#1B314E] px-4 py-6 lg:py-0">
-                  <div className="flex flex-wrap justify-center lg:justify-evenly gap-x-[16rem]  items-center">
+                  <div className="flex flex-wrap justify-center lg:justify-evenly gap-x-[2rem] md:gap-x-[10rem] lg:gap-x-[12rem] 2xl:gap-x-[16rem]  items-center">
                         {stats.map((stat, index) => (
                               <div
                                     key={index}

@@ -64,7 +64,7 @@ const HeaderTwo = () => {
                               className={`fixed top-0 left-0 w-full h-full md:relative md:h-auto md:w-auto bg-black bg-opacity-90 md:bg-transparent flex flex-col md:flex-row items-center justify-center md:justify-end transition-transform duration-300 z-40 ${isMobileMenuOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
                                     }`}
                         >
-                              <ul className="flex flex-col md:flex-row gap-[40px] items-center justify-center md:gap-[24px] p-8 md:p-0">
+                              <ul className="flex flex-col md:flex-row gap-[40px] items-center justify-center md:gap-[12px] lg:gap-[24px] p-8 md:p-0">
                                     {navLinks.map(({ name, path, children }) => (
                                           <li key={path} className="relative group">
                                                 {/* Main Link */}
