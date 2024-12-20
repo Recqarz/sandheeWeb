@@ -30,7 +30,7 @@ const FooterTwo = ({ className }) => {
                               </div>
                         </div>
                         <p className="text-white md:pl-10 text-xs sm:text-sm font-light">
-                              © 2024 All Rights Reserved. Garima Consulting Pvt. Ltd.
+                              © 2024 All Rights Reserved. Girma Consulting Pvt. Ltd.
                         </p>
 
                         <div className="bg-white w-full mt-4">
