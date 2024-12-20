@@ -79,7 +79,7 @@ const InquiryForm = () => {
       return (
             <div className="text-center inquiry-bg py-10 px-6 lg:px-16">
                   <div className="mb-[222px] mt-[127px]">
-                        <h2 className="inquiry--text">MAKE AN INQUIRY</h2>
+                        <h2 className="inquiry--text">MAKE AN ENQUIRY</h2>
                         <p className="vision-textt vmb__text">WE WOULD LOVE TO WORK WITH YOU</p>
                         <form className=" w-[320px] lg:w-[950px] mx-auto" onSubmit={handleSubmit}>
                               {['Name', 'Email', 'Phone', 'Company', 'Message'].map((field, index) => (
